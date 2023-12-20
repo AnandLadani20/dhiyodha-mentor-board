@@ -18,7 +18,7 @@ const Header = () => {
                  <img src={DhiyodhaMainLogo} height={90} alt='dhiyodha-logo' />
                  <Box>
                  <Typography variant='h5' sx={{fontWeight:"700"}}>Dhiyodha</Typography>
-                 <Typography variant='h5'>MentorBoard</Typography>
+                 <Typography variant='h5' sx={{fontWeight:"700"}}>MentorBoard</Typography>
                  </Box>
               </IconButton>
            </Grid>
