@@ -1,17 +1,26 @@
 {
   "files": {
-    "main.css": "/dhiyodha-mentor-board/static/css/main.31d6cfe0.css",
-    "main.js": "/dhiyodha-mentor-board/static/js/main.08544a82.js",
+    "main.css": "/dhiyodha-mentor-board/static/css/main.bf4f7320.css",
+    "main.js": "/dhiyodha-mentor-board/static/js/main.2592db9c.js",
     "static/js/787.e1caefec.chunk.js": "/dhiyodha-mentor-board/static/js/787.e1caefec.chunk.js",
-    "static/media/council.jpg": "/dhiyodha-mentor-board/static/media/council.5e824bca5d21a00b06bf.jpg",
+    "static/media/build (1) (1).jpg": "/dhiyodha-mentor-board/static/media/build (1) (1).2a0f571f8c3eb0565335.jpg",
+    "static/media/council.jpg": "/dhiyodha-mentor-board/static/media/council.be9ef1adf93191ea7aea.jpg",
     "static/media/Dhiyodha.png": "/dhiyodha-mentor-board/static/media/Dhiyodha.be12a7554b461283711c.png",
+    "static/media/Oswald-Medium.ttf": "/dhiyodha-mentor-board/static/media/Oswald-Medium.79e266089ef37332d7ae.ttf",
+    "static/media/guest1.jpg": "/dhiyodha-mentor-board/static/media/guest1.6919ce9c31886e70a0bc.jpg",
+    "static/media/growthIcon.svg": "/dhiyodha-mentor-board/static/media/growthIcon.27ac237d5bf05fc5520d335a1ca23394.svg",
     "static/media/logo.svg": "/dhiyodha-mentor-board/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/instaIcon.svg": "/dhiyodha-mentor-board/static/media/instaIcon.8d960687610dc2485257f7dce8cbb288.svg",
+    "static/media/linkedinIcon.svg": "/dhiyodha-mentor-board/static/media/linkedinIcon.06ef3ae3b81b61fefdfc7a0b15fb9e8e.svg",
+    "static/media/twitterIcon.svg": "/dhiyodha-mentor-board/static/media/twitterIcon.56a7cd5f9e459ead67a568162eb71079.svg",
     "index.html": "/dhiyodha-mentor-board/index.html",
-    "main.08544a82.js.map": "/dhiyodha-mentor-board/static/js/main.08544a82.js.map",
+    "static/media/fbIcon.svg": "/dhiyodha-mentor-board/static/media/fbIcon.80b0812d6c1a400d545f62b2a3b23ec8.svg",
+    "main.bf4f7320.css.map": "/dhiyodha-mentor-board/static/css/main.bf4f7320.css.map",
+    "main.2592db9c.js.map": "/dhiyodha-mentor-board/static/js/main.2592db9c.js.map",
     "787.e1caefec.chunk.js.map": "/dhiyodha-mentor-board/static/js/787.e1caefec.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.08544a82.js"
+    "static/css/main.bf4f7320.css",
+    "static/js/main.2592db9c.js"
   ]
 }
