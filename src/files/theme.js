@@ -37,7 +37,7 @@ let Customize = createTheme({
     },
 
     typography: {
-        fontSize: 13.5,
+        fontSize: 14.5,
         button: {
             fontWeight: 500,
             textTransform: "none"
@@ -82,16 +82,22 @@ let Theme = createTheme({
         },
         MuiButton: {
             defaultProps: {
-
+                backgroundColor:"#223f93",
                 variant: "contained",
-                size: "medium",
+                size: "large",
                 disableElevation: true,
+               
             },
             styleOverrides: {
                 contained: {
                     color: "#dddddd",
-                    boxShadow: Customize.shadows[3],
+                    boxShadow: Customize.shadows[2],
+                    borderRadius:"0",
+                    "&:hover": {
+                        backgroundColor: "#f56016"
+                    }
                 }
+             
             }
         },
         MuiIconButton: {

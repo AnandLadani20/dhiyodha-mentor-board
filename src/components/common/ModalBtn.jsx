@@ -1,8 +1,10 @@
-import { Modal, Button,Box, Typography } from "@mui/material";
+import {Slide , Modal, Button,Box, Typography } from "@mui/material";
 import React, { forwardRef } from "react";
 import Register from './Register'
 
-
+// const Transition = React.forwardRef(function Transition(props, ref) {
+//   return <Slide direction="up" ref={ref} {...props} />;
+// });
 
 const ModalBtn = forwardRef(({btnName,children},ref) => {
     const [open, setOpen] = React.useState(false);
@@ -29,6 +31,7 @@ const ModalBtn = forwardRef(({btnName,children},ref) => {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        
       >
         <Box sx={style}>
           {children}
