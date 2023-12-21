@@ -13,6 +13,13 @@ import ModalBtn from "../components/common/ModalBtn";
 import Register from "../components/common/Register";
 import SponsorForm from "../components/common/SponsorForm";
 import herobg from "../files/images/council.jpg";
+import guest1 from "../files/images/guest1.jpg";
+
+import { ReactComponent as GrowthIcon } from "../files/icon/growthIcon.svg";
+import { ReactComponent as FacebookIcon } from "../files/icon/fbIcon.svg";
+import { ReactComponent as InstaIcon } from "../files/icon/instaIcon.svg";
+import { ReactComponent as LinkedinIcon } from "../files/icon/linkedinIcon.svg";
+import { ReactComponent as TwitterIcon } from "../files/icon/twitterIcon.svg";
 
 const Home = () => {
   //  CountDownTimer
@@ -62,13 +69,13 @@ const Home = () => {
   }
 
   // Item of Paper
-  const Item = styled(Paper)({
-    padding: "8px",
-    textAlign: "center",
-    color: "#000",
-    width: "100%",
-    height: "100%",
-  });
+  // const ItemWrap = styled(Paper)({
+  //   padding: "8px",
+  //   textAlign: "center",
+  //   color: "#000",
+  //   width: "100%",
+  //   height: "100%",
+  // });
 
   return (
     <>
@@ -317,14 +324,34 @@ const Home = () => {
         <Grid
           container
           justifyContent="center"
-          spacing={2}
           height="450px"
           py={3}
           position="relative"
           sx={{ backgroundColor: "transparent" }}
         >
-          <Grid item xs={8} md={3} sx={{transition:"transform 0.4s ease",":hover":{transform:"translateY(-10px)"}}}>
-            <Item sx={{ backgroundColor: "#fff",boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px" }}>
+          <Grid
+            item
+            xs={8}
+            md={3}
+            sx={{
+              transition: "transform 0.4s ease",
+              ":hover": {
+                transform: "translateY(-10px)",
+                boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+              },
+            }}
+          >
+            <Paper
+              sx={{
+                backgroundColor: "#ffffff73",
+                border: "1px solid #223f93",
+                padding: "8px",
+                textAlign: "center",
+                color: "#000",
+                width: "100%",
+                height: "100%",
+              }}
+            >
               <Typography
                 variant="h4"
                 fontWeight={600}
@@ -333,9 +360,18 @@ const Home = () => {
               >
                 Title
               </Typography>
-              <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, voluptatibus.</Typography>
-              <Typography variant="h4" fontWeight={500} mt={2} className="heading_common_style">
-                799/- <span style={{fontSize:"14px"}}>+ GST</span>
+              <Typography>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Voluptas, voluptatibus.
+              </Typography>
+              <Typography
+                variant="h4"
+                fontWeight={500}
+                mt={2}
+                className="heading_common_style"
+              >
+                <span style={{ fontSize: "14px" }}>₹</span> 799/-{" "}
+                <span style={{ fontSize: "14px" }}>+ GST</span>
               </Typography>
 
               <Box mt={2}>
@@ -344,23 +380,56 @@ const Home = () => {
                   <Register />
                 </ModalBtn>
               </Box>
-            </Item>
+              <hr style={{ marginTop: "20px" }} />
+              <Typography variant="h6">Features:</Typography>
+            </Paper>
           </Grid>
 
-          <Grid item xs={8} md={3} sx={{transition:"transform 0.4s ease",":hover":{transform:"translateY(-10px)"}}}>
-          <Item sx={{ backgroundColor: "#ffffff73",backdropFilter:"blur(8px)",boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px" }}>
+          <Grid
+            item
+            xs={8}
+            md={3}
+            ml={{ lg: 2, md: 2, xs: 0 }}
+            mt={{ xs: 2, md: 0 }}
+            sx={{
+              transition: "transform 0.4s ease",
+              ":hover": {
+                transform: "translateY(-10px)",
+                boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+              },
+            }}
+          >
+            <Paper
+              sx={{
+                backgroundColor: "#ffffff73",
+                border: "1px solid #223f93",
+                padding: "8px",
+                textAlign: "center",
+                color: "#000",
+                width: "100%",
+                height: "100%",
+              }}
+            >
               <Typography
                 variant="h5"
                 fontWeight={600}
                 className="heading_common_style"
                 mt={2}
-               
               >
                 Title
               </Typography>
-              <Typography >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, voluptatibus.</Typography>
-              <Typography variant="h5" fontWeight={600} mt={2}   className="heading_common_style">
-              1999/-<span style={{fontSize:"14px"}}> + GST</span>
+              <Typography>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Voluptas, voluptatibus.
+              </Typography>
+              <Typography
+                variant="h5"
+                fontWeight={600}
+                mt={2}
+                className="heading_common_style"
+              >
+                <span style={{ fontSize: "14px" }}>₹</span> 1999/-
+                <span style={{ fontSize: "14px" }}> + GST</span>
               </Typography>
 
               <Box mt={2}>
@@ -369,127 +438,371 @@ const Home = () => {
                   <Register />
                 </ModalBtn>
               </Box>
-            </Item>
+            </Paper>
           </Grid>
 
-          <Box className="bg-banner-img"></Box>
+          {/* <Box className="bg-banner-img"></Box> */}
         </Grid>
 
-        <Box>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi facere
-          necessitatibus non quisquam consequatur porro temporibus.
-          Necessitatibus voluptas mollitia culpa. Ab qui quis explicabo vero
-          possimus tempore voluptatem pariatur doloribus necessitatibus, facilis
-          nesciunt repudiandae numquam harum earum repellendus fuga quod,
-          aspernatur sunt perferendis in? Ipsam, a. Minima pariatur accusamus
-          officiis mollitia ipsum odio rem itaque fugiat doloremque incidunt,
-          quod consequuntur dolore nulla facere earum impedit ratione neque
-          laudantium beatae. Omnis tempora dignissimos sequi dolores saepe
-          facilis iste quasi consequuntur culpa facere vitae autem explicabo
-          consectetur excepturi, modi nostrum voluptatum quidem ex voluptas
-          laudantium impedit atque officia ad. Repellat quam officia dolore,
-          velit exercitationem eaque neque numquam autem tempora provident illum
-          aliquam placeat quisquam quia mollitia esse quaerat repudiandae sint
-          quod iusto et voluptatem! Earum qui dignissimos excepturi
-          necessitatibus iste? Ipsa, saepe. Quibusdam, optio, aliquid at tempore
-          omnis, modi nihil doloremque quo sapiente sunt a. Deleniti facere
-          similique suscipit sint excepturi officiis sed quibusdam consequatur
-          maiores, commodi nihil fugit natus doloribus, cupiditate aut
-          perspiciatis dolorem quis. Alias sunt repellendus rem beatae
-          dignissimos facilis magni odio optio explicabo id cumque vero labore
-          fugiat voluptates ab, vitae hic omnis deserunt corporis quae ad. Quae
-          quasi in accusamus qui repellendus quaerat suscipit obcaecati placeat,
-          ex, maxime enim ipsum error nobis deserunt, labore earum facilis
-          debitis odit reprehenderit eius. Libero expedita assumenda architecto
-          dolorum voluptate ea eos? Nobis ipsum adipisci, sit dolor totam vero
-          atque modi harum eveniet quos aperiam, nemo repellendus nulla ipsam
-          assumenda quam nam! Dicta odio nam dolore nisi inventore odit delectus
-          quam reprehenderit sapiente libero nostrum, quia veritatis.
-          Accusantium aspernatur vitae voluptatibus dolore harum. Iusto hic
-          suscipit dolore. Delectus nesciunt sequi eveniet nemo eos nisi quos
-          repudiandae. Aut repellendus iusto dolore odio quae a recusandae, amet
-          eius culpa accusamus, ipsa voluptatum. Ipsa, tempore. Minima molestias
-          dolor quas sint eum voluptas totam similique consequatur qui! Dolorem
-          expedita, quidem deleniti accusantium corporis nesciunt. Illum
-          voluptatibus quos, nemo exercitationem sint asperiores nihil? Nemo et
-          possimus unde quisquam ducimus corporis maxime perferendis adipisci
-          iste voluptate! Enim tempore, et nisi placeat, esse molestiae cum vel
-          minima, natus sit consequuntur delectus asperiores eligendi nemo amet.
-          Maxime, animi quibusdam. At earum ullam quaerat, expedita quos
-          praesentium animi tempora cumque illum aliquid. Soluta nihil quo animi
-          harum. Doloribus quia ipsam dicta alias rerum, nulla saepe in
-          cupiditate! Quia ducimus quis eum in magni a sed, odit tempora fugiat
-          architecto mollitia quisquam accusamus consequatur laboriosam repellat
-          reprehenderit animi maiores nobis eveniet velit! Ad cupiditate
-          inventore nostrum natus! Possimus voluptas quasi non mollitia
-          reprehenderit earum minima, nulla quaerat illum, esse dicta, iusto
-          adipisci! Id natus nemo distinctio perferendis necessitatibus rerum,
-          ab maxime amet eius tenetur non. Tenetur consequuntur aperiam ut
-          placeat! Perspiciatis voluptatibus, quasi tempora aperiam ut minus
-          possimus numquam aliquid commodi nesciunt et rem ex placeat dolor!
-          Praesentium, qui incidunt tempore laborum corrupti numquam provident
-          beatae facere quas alias quo ea ipsa debitis in earum odit laboriosam
-          porro inventore facilis perspiciatis vitae iusto. Placeat voluptates
-          similique aperiam adipisci soluta aliquid ullam omnis a necessitatibus
-          saepe laborum, corrupti hic quo veniam tempora, quas dolor architecto,
-          officiis quidem pariatur. Nesciunt nemo quibusdam, reiciendis
-          obcaecati illum alias laborum suscipit ex quidem asperiores ratione
-          quos id, earum praesentium odio, fugit quis incidunt. Voluptatum,
-          atque corporis! Sequi in veniam aperiam nemo quas laborum. Doloremque,
-          quasi quam sequi fugit voluptates dolores beatae nam deserunt sit
-          perferendis ex, commodi itaque adipisci totam est similique possimus
-          dolor ducimus accusamus minima deleniti debitis illum. Iusto sequi
-          eveniet ut numquam, repellendus, dignissimos est nemo molestiae dicta
-          labore sunt error, impedit cupiditate! Et, ducimus voluptate aliquid
-          harum, deleniti reprehenderit excepturi ex corrupti dolores mollitia
-          soluta maiores cumque. Corporis illum fuga dolor id. Illo obcaecati
-          asperiores debitis, similique totam nobis? Inventore eveniet velit
-          amet alias voluptas ratione, dolores explicabo aliquid repudiandae
-          fuga, sint recusandae asperiores ipsa aliquam architecto totam, harum
-          facilis doloribus nobis eligendi sit laudantium vero. Saepe sunt
-          eligendi officiis, perferendis architecto tenetur velit tempora totam
-          aliquam necessitatibus, nulla praesentium illo repudiandae libero?
-          Aspernatur consequuntur, architecto placeat ad, magnam sunt nobis esse
-          ab sequi quas aperiam voluptatum quibusdam repellendus nostrum sed
-          vitae tenetur! Sed temporibus voluptates numquam veritatis totam!
-          Magni nobis excepturi cupiditate, dolor veniam ipsam quas debitis nam
-          quaerat recusandae ea ut. Iusto, voluptatum accusamus? Veritatis
-          possimus totam quaerat illum accusamus obcaecati architecto
-          dignissimos id, rem quidem, ipsum officiis veniam! Molestiae
-          reiciendis, modi necessitatibus sint vel totam at cupiditate illo
-          placeat deserunt minima nobis explicabo minus odit aperiam magni,
-          officia odio commodi illum vero. Recusandae provident omnis, nesciunt
-          sunt error repudiandae inventore exercitationem. Ipsa deserunt fugiat
-          dolores autem sequi quasi tempora, quae nihil accusamus provident
-          minus et incidunt dignissimos doloribus facere sapiente totam illo vel
-          unde mollitia aut. Corrupti totam, maxime magni omnis et doloribus
-          eveniet nam cumque expedita provident nemo. Exercitationem ipsa
-          praesentium eos est mollitia quod eius architecto deleniti possimus
-          consequuntur aliquid molestiae cum laboriosam illo, nostrum doloremque
-          reprehenderit? Ut illo quibusdam recusandae aut velit quo corporis
-          ipsum consequatur id, voluptate expedita est quae quasi unde esse
-          neque. Libero aliquid soluta tempore. Natus voluptatem explicabo
-          libero itaque sunt sit doloribus eos recusandae atque quibusdam, quo
-          consequuntur cupiditate quas totam temporibus excepturi eum officia
-          esse modi enim necessitatibus distinctio ducimus. Illo doloribus
-          possimus quod numquam odit? Voluptas, adipisci. Voluptatum praesentium
-          suscipit, dolorem fuga tempore modi temporibus molestiae! Obcaecati
-          dolore nihil quo vel, quasi, error eaque quos exercitationem minima
-          nesciunt ullam animi, id cumque autem. Quae amet pariatur optio harum
-          expedita ipsam voluptates eligendi ipsa mollitia quaerat? Modi atque,
-          iure sunt nobis et sit mollitia minus corrupti provident dolores
-          maxime tempora! Voluptatibus alias molestias qui, minima tenetur sint
-          illum rerum voluptate molestiae quia repellat expedita voluptatum
-          dolores vitae quas sapiente saepe praesentium? Laboriosam, dignissimos
-          nisi aperiam necessitatibus at impedit molestiae praesentium
-          perspiciatis unde sed et distinctio quo quod dolores voluptatibus sint
-          mollitia velit ut. Voluptatibus nisi quod voluptates. Amet, odio
-          temporibus! Nulla sequi est eos hic cumque. Dignissimos, quod? Cumque
-          cum odio, exercitationem pariatur porro impedit obcaecati blanditiis
-          deleniti dicta recusandae vitae asperiores consectetur sequi excepturi
-          temporibus, expedita laboriosam ea sed quo natus sint beatae
-          architecto accusamus! Commodi, ab nobis.
-        </Box>
+        <Grid container justifyContent="center" mt={2} py={2}>
+          <Grid item xs={10} md={10} lg={9} textAlign="center">
+            <Typography textAlign="justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              facere necessitatibus non quisquam consequatur porro temporibus.
+              Necessitatibus voluptas mollitia culpa. Ab qui quis explicabo vero
+              possimus tempore voluptatem pariatur doloribus necessitatibus,
+              facilis nesciunt repudiandae numquam harum earum repellendus fuga
+              quod, aspernatur sunt perferendis in? Ipsam, a. Minima pariatur
+              accusamus officiis mollitia ipsum odio rem itaque fugiat
+              doloremque incidunt, quod consequuntur dolore nulla facere earum
+              impedit ratione neque laudantium beatae. Omnis tempora dignissimos
+              sequi dolores saepe facilis iste quasi consequuntur culpa facere
+              vitae autem explicabo consectetur excepturi, modi nostrum
+              voluptatum quidem ex voluptas laudantium impedit atque officia ad.
+              Repellat quam officia dolore, velit exercitationem eaque neque
+              numquam autem tempora provident illum aliquam placeat quisquam
+              quia mollitia esse quaerat repudiandae sint quod iusto et
+              voluptatem! Earum qui dignissimos excepturi necessitatibus iste?
+              Ipsa, saepe. Quibusdam, optio, aliquid at tempore
+            </Typography>
+
+            <Typography textAlign="justify" mt={2}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              facere necessitatibus non quisquam consequatur porro temporibus.
+              Necessitatibus voluptas mollitia culpa. Ab qui quis explicabo vero
+              possimus tempore voluptatem pariatur doloribus necessitatibus,
+              facilis nesciunt repudiandae numquam harum earum repellendus fuga
+              quod, aspernatur sunt perferendis in? Ipsam, a. Minima pariatur
+            </Typography>
+            <Box></Box>
+            <Button sx={{ marginTop: "40px" }}>
+              Perception of Women Directors on Boards
+            </Button>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center" mt={4}>
+          <Grid xs={10} md={10} lg={9} textAlign="center">
+            <Typography
+              variant="h4"
+              mb={2}
+              className="heading_common_style"
+              color="#223f93"
+            >
+              Services
+            </Typography>
+          </Grid>
+          <Grid item xs={10} md={10} lg={9}>
+            <Grid container columnSpacing={2} rowSpacing={2}>
+              <Grid item md={4}>
+                <Paper className="service_contain_wrap">
+                  <Box className="service_svg_wrapper">
+                    <GrowthIcon />
+                  </Box>
+                  <Typography variant="h5" mt={1}>
+                    Title
+                  </Typography>
+                  <Typography textAlign="justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Recusandae architecto libero veniam voluptatum
+                    exercitationem ducimus.
+                  </Typography>
+                </Paper>
+              </Grid>
+              <Grid item md={4}>
+                <Paper className="service_contain_wrap">
+                  <Box className="service_svg_wrapper">
+                    <GrowthIcon />
+                  </Box>
+                  <Typography variant="h5" mt={1}>
+                    Title
+                  </Typography>
+                  <Typography textAlign="justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Recusandae architecto libero veniam voluptatum
+                    exercitationem ducimus.
+                  </Typography>
+                </Paper>
+              </Grid>
+              <Grid item md={4}>
+                <Paper className="service_contain_wrap">
+                  <Box className="service_svg_wrapper">
+                    <GrowthIcon />
+                  </Box>
+                  <Typography variant="h5" mt={1}>
+                    Title
+                  </Typography>
+                  <Typography textAlign="justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Recusandae architecto libero veniam voluptatum
+                    exercitationem ducimus.
+                  </Typography>
+                </Paper>
+              </Grid>
+              <Grid item md={4}>
+                <Paper className="service_contain_wrap">
+                  <Box className="service_svg_wrapper">
+                    <GrowthIcon />
+                  </Box>
+                  <Typography variant="h5" mt={1}>
+                    Title
+                  </Typography>
+                  <Typography textAlign="justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Recusandae architecto libero veniam voluptatum
+                    exercitationem ducimus.
+                  </Typography>
+                </Paper>
+              </Grid>
+              <Grid item md={4}>
+                <Paper className="service_contain_wrap">
+                  <Box className="service_svg_wrapper">
+                    <GrowthIcon />
+                  </Box>
+                  <Typography variant="h5" mt={1}>
+                    Title
+                  </Typography>
+                  <Typography textAlign="justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Recusandae architecto libero veniam voluptatum
+                    exercitationem ducimus.
+                  </Typography>
+                </Paper>
+              </Grid>
+              <Grid item md={4}>
+                <Paper className="service_contain_wrap">
+                  <Box className="service_svg_wrapper">
+                    <GrowthIcon />
+                  </Box>
+                  <Typography variant="h5" mt={1}>
+                    Title
+                  </Typography>
+                  <Typography textAlign="justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Recusandae architecto libero veniam voluptatum
+                    exercitationem ducimus.
+                  </Typography>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center" mt={5} mb={5}>
+          <Grid xs={10} md={10} lg={9} textAlign="center">
+            <Typography
+              variant="h4"
+              mb={2}
+              className="heading_common_style"
+              color="#223f93"
+            >
+              Chief Guest
+            </Typography>
+          </Grid>
+          <Grid item xs={10} md={10} lg={9} textAlign="start" mt={4}>
+            <Grid container columnSpacing={2} rowSpacing={2}>
+              <Grid item md={4}>
+                <Box className="guest-content-wrap">
+                  <Box className="guest-img-wrap">
+                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <Box className="guest_social_media_wrap">
+                      <Box className="media_item_wrap">
+                        <FacebookIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <InstaIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <TwitterIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <LinkedinIcon />
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
+                    Smt. Nirmala Sitharaman
+                  </Typography>
+                  <Typography pl={1}>
+                    Hon'ble Union Minister of Finance & Corporate Affairs,
+                    Government of India
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item md={4}>
+                <Box className="guest-content-wrap">
+                  <Box className="guest-img-wrap">
+                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <Box className="guest_social_media_wrap">
+                      <Box className="media_item_wrap">
+                        <FacebookIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <InstaIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <TwitterIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <LinkedinIcon />
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
+                    Smt. Nirmala Sitharaman
+                  </Typography>
+                  <Typography pl={1}>
+                    Hon'ble Union Minister of Finance & Corporate Affairs,
+                    Government of India
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item md={4}>
+                <Box className="guest-content-wrap">
+                  <Box className="guest-img-wrap">
+                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <Box className="guest_social_media_wrap">
+                      <Box className="media_item_wrap">
+                        <FacebookIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <InstaIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <TwitterIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <LinkedinIcon />
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
+                    Smt. Nirmala Sitharaman
+                  </Typography>
+                  <Typography pl={1}>
+                    Hon'ble Union Minister of Finance & Corporate Affairs,
+                    Government of India
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item md={4}>
+                <Box className="guest-content-wrap">
+                  <Box className="guest-img-wrap">
+                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <Box className="guest_social_media_wrap">
+                      <Box className="media_item_wrap">
+                        <FacebookIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <InstaIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <TwitterIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <LinkedinIcon />
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
+                    Smt. Nirmala Sitharaman
+                  </Typography>
+                  <Typography pl={1}>
+                    Hon'ble Union Minister of Finance & Corporate Affairs,
+                    Government of India
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item md={4}>
+                <Box className="guest-content-wrap">
+                  <Box className="guest-img-wrap">
+                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <Box className="guest_social_media_wrap">
+                      <Box className="media_item_wrap">
+                        <FacebookIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <InstaIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <TwitterIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <LinkedinIcon />
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
+                    Smt. Nirmala Sitharaman
+                  </Typography>
+                  <Typography pl={1}>
+                    Hon'ble Union Minister of Finance & Corporate Affairs,
+                    Government of India
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item md={4}>
+                <Box className="guest-content-wrap">
+                  <Box className="guest-img-wrap">
+                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <Box className="guest_social_media_wrap">
+                      <Box className="media_item_wrap">
+                        <FacebookIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <InstaIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <TwitterIcon />
+                      </Box>
+                      <Box className="media_item_wrap">
+                        <LinkedinIcon />
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
+                    Smt. Nirmala Sitharaman
+                  </Typography>
+                  <Typography pl={1}>
+                    Hon'ble Union Minister of Finance & Corporate Affairs,
+                    Government of India
+                  </Typography>
+                </Box>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center" mt={5} mb={5}>
+          <Grid xs={10} md={10} lg={9} >
+            <Grid container mt={3}>
+              <Grid item lg={6}>
+                <Typography
+                  variant="h4"
+                 
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  Who Should Join?
+                </Typography>
+                <Typography variant="h4">Lorem ipsum dolor sit amet. dolor sit amet </Typography>
+                <Typography variant="h6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero est consectetur nemo.</Typography>
+              
+              <Box>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                </ul>
+              </Box>
+              
+              </Grid>
+              <Grid item lg={6}>
+                 <img src="bann" alt="img-banner" />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        {/*  */}
       </Grid>
     </>
   );

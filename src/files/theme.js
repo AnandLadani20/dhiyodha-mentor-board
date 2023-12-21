@@ -17,7 +17,7 @@ let Customize = createTheme({
         gradient: "linear-gradient(to right bottom, #223f93, #4bc2ec)",
         background: {
             default: "#fff",
-            paper: "#223f93",
+            paper: "#fff",
             card: "#223f93"
         },
         text: {
