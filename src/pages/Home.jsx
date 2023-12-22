@@ -14,12 +14,29 @@ import Register from "../components/common/Register";
 import SponsorForm from "../components/common/SponsorForm";
 import herobg from "../files/images/council.jpg";
 import guest1 from "../files/images/guest1.jpg";
+import guest2 from "../files/images/guest2.jpg";
+import guest3 from "../files/images/guest3.jpg";
+import guest4 from "../files/images/guest4.jpg";
+import companyLogo1 from "../files/sponser-logo/Screenshot 2023-12-22 113138.png";
+import companyLogo2 from "../files/sponser-logo/Screenshot 2023-12-22 113148.png";
+import companyLogo3 from "../files/sponser-logo/Screenshot 2023-12-22 113156.png";
+import companyLogo4 from "../files/sponser-logo//Screenshot 2023-12-22 113209.png";
 
 import { ReactComponent as GrowthIcon } from "../files/icon/growthIcon.svg";
 import { ReactComponent as FacebookIcon } from "../files/icon/fbIcon.svg";
 import { ReactComponent as InstaIcon } from "../files/icon/instaIcon.svg";
 import { ReactComponent as LinkedinIcon } from "../files/icon/linkedinIcon.svg";
 import { ReactComponent as TwitterIcon } from "../files/icon/twitterIcon.svg";
+
+// react swiper js Carousel
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css/effect-fade";
+import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Home = () => {
   //  CountDownTimer
@@ -67,15 +84,19 @@ const Home = () => {
 
     return { days, hours, minutes, seconds };
   }
+  // End
 
-  // Item of Paper
-  // const ItemWrap = styled(Paper)({
-  //   padding: "8px",
-  //   textAlign: "center",
-  //   color: "#000",
-  //   width: "100%",
-  //   height: "100%",
-  // });
+  // Scrolling section when click Book Your Seat
+  const handleScrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+  // End
 
   return (
     <>
@@ -212,16 +233,28 @@ const Home = () => {
         >
           <Grid
             item
-            md={9}
-            p={3}
+            xs={10}
+            md={10}
+            lg={9}
+            p={{ xs: 1, md: 2, lg: 3 }}
             sx={{
               boxShadow: "0 10px 180px #0000001a",
               backgroundColor: "#fff",
               borderRadius: "5px",
             }}
           >
-            <Grid container spacing={5} alignItems="center">
-              <Grid item md={4}>
+            <Grid
+              container
+              columnSpacing={{ xs: 1, sm: 2, md: 3, lg: 5 }}
+              alignItems="center"
+            >
+              <Grid
+                item
+                xs={12}
+                md={4}
+                textAlign={{ xs: "center", md: "start" }}
+                mb={{ xs: "30px", md: "0" }}
+              >
                 <Tooltip title="You don't have permission to do this">
                   <span>
                     <Button
@@ -237,54 +270,53 @@ const Home = () => {
                   </span>
                 </Tooltip>
               </Grid>
-              <Grid item md={2} sx={{ textAlign: "center" }}>
-                {/* <Box sx={{ display: "flex", gap: "20px" }}> */}
+              <Grid item xs={3} md={2} sx={{ textAlign: "center" }}>
                 <Box
                   sx={{
-                    fontSize: "3rem",
                     backgroundColor: "#223f93",
-                    padding: "20px 0px",
                     color: "#fff",
                   }}
+                  fontSize={{ xs: "2rem", sm: "2.5rem", md: "3rem" }}
+                  py={{ xs: 1, sm: 1, md: 1, lg: 1.2 }}
                 >
                   {timeRemaining.days}
                 </Box>
                 <Typography>Days</Typography>
               </Grid>
-              <Grid item md={2} sx={{ textAlign: "center" }}>
+              <Grid item xs={3} md={2} sx={{ textAlign: "center" }}>
                 <Box
                   sx={{
-                    fontSize: "3rem",
                     backgroundColor: "#4bc2ec",
-                    padding: "20px 0px",
                     color: "#fff",
                   }}
+                  fontSize={{ xs: "2rem", sm: "2.5rem", md: "3rem" }}
+                  py={{ xs: 1, sm: 1, md: 1, lg: 1.2 }}
                 >
                   {timeRemaining.hours}
                 </Box>
                 <Typography>Hours</Typography>
               </Grid>
-              <Grid item md={2} sx={{ textAlign: "center" }}>
+              <Grid item xs={3} md={2} sx={{ textAlign: "center" }}>
                 <Box
                   sx={{
-                    fontSize: "3rem",
                     backgroundColor: "#ed3337",
-                    padding: "20px 0px",
                     color: "#fff",
                   }}
+                  fontSize={{ xs: "2rem", sm: "2.5rem", md: "3rem" }}
+                  py={{ xs: 1, sm: 1, md: 1, lg: 1.2 }}
                 >
                   {timeRemaining.minutes}
                 </Box>
                 <Typography>Minutes</Typography>
               </Grid>
-              <Grid item md={2} sx={{ textAlign: "center" }}>
+              <Grid item xs={3} md={2} sx={{ textAlign: "center" }}>
                 <Box
                   sx={{
-                    fontSize: "3rem",
                     backgroundColor: "#f56016",
-                    padding: "20px 0px",
                     color: "#fff",
                   }}
+                  fontSize={{ xs: "2rem", sm: "2.5rem", md: "3rem" }}
+                  py={{ xs: 1, sm: 1, md: 1, lg: 1.2 }}
                 >
                   {timeRemaining.seconds}
                 </Box>
@@ -328,11 +360,14 @@ const Home = () => {
           py={3}
           position="relative"
           sx={{ backgroundColor: "transparent" }}
+          id="bookSeat"
         >
           <Grid
             item
-            xs={8}
-            md={3}
+            xs={10}
+            sm={5}
+            md={4}
+            lg={3}
             sx={{
               transition: "transform 0.4s ease",
               ":hover": {
@@ -387,10 +422,12 @@ const Home = () => {
 
           <Grid
             item
-            xs={8}
-            md={3}
-            ml={{ lg: 2, md: 2, xs: 0 }}
-            mt={{ xs: 2, md: 0 }}
+            xs={10}
+            sm={5}
+            md={4}
+            lg={3}
+            ml={{ lg: 2, md: 2, sm: 1, xs: 0 }}
+            mt={{ xs: 2, sm: 0, md: 0 }}
             sx={{
               transition: "transform 0.4s ease",
               ":hover": {
@@ -482,19 +519,19 @@ const Home = () => {
         </Grid>
 
         <Grid container justifyContent="center" mt={4}>
-          <Grid xs={10} md={10} lg={9} textAlign="center">
+          <Grid item xs={10} md={10} lg={9} textAlign="center">
             <Typography
               variant="h4"
               mb={2}
               className="heading_common_style"
               color="#223f93"
             >
-              Services
+              SERVICES
             </Typography>
           </Grid>
           <Grid item xs={10} md={10} lg={9}>
             <Grid container columnSpacing={2} rowSpacing={2}>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Paper className="service_contain_wrap">
                   <Box className="service_svg_wrapper">
                     <GrowthIcon />
@@ -509,7 +546,7 @@ const Home = () => {
                   </Typography>
                 </Paper>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Paper className="service_contain_wrap">
                   <Box className="service_svg_wrapper">
                     <GrowthIcon />
@@ -524,7 +561,7 @@ const Home = () => {
                   </Typography>
                 </Paper>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Paper className="service_contain_wrap">
                   <Box className="service_svg_wrapper">
                     <GrowthIcon />
@@ -539,7 +576,7 @@ const Home = () => {
                   </Typography>
                 </Paper>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Paper className="service_contain_wrap">
                   <Box className="service_svg_wrapper">
                     <GrowthIcon />
@@ -554,7 +591,7 @@ const Home = () => {
                   </Typography>
                 </Paper>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Paper className="service_contain_wrap">
                   <Box className="service_svg_wrapper">
                     <GrowthIcon />
@@ -569,7 +606,7 @@ const Home = () => {
                   </Typography>
                 </Paper>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Paper className="service_contain_wrap">
                   <Box className="service_svg_wrapper">
                     <GrowthIcon />
@@ -589,19 +626,19 @@ const Home = () => {
         </Grid>
 
         <Grid container justifyContent="center" mt={5} mb={5}>
-          <Grid xs={10} md={10} lg={9} textAlign="center">
+          <Grid item xs={10} md={10} lg={9} textAlign="center">
             <Typography
               variant="h4"
               mb={2}
               className="heading_common_style"
               color="#223f93"
             >
-              Chief Guest
+              CHEIF GUEST
             </Typography>
           </Grid>
           <Grid item xs={10} md={10} lg={9} textAlign="start" mt={4}>
             <Grid container columnSpacing={2} rowSpacing={2}>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
                     <img src={guest1} alt="guest" height="100%" width="100%" />
@@ -629,7 +666,7 @@ const Home = () => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
                     <img src={guest1} alt="guest" height="100%" width="100%" />
@@ -657,7 +694,7 @@ const Home = () => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
                     <img src={guest1} alt="guest" height="100%" width="100%" />
@@ -685,7 +722,7 @@ const Home = () => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
                     <img src={guest1} alt="guest" height="100%" width="100%" />
@@ -713,7 +750,7 @@ const Home = () => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
                     <img src={guest1} alt="guest" height="100%" width="100%" />
@@ -741,7 +778,7 @@ const Home = () => {
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
                     <img src={guest1} alt="guest" height="100%" width="100%" />
@@ -774,33 +811,485 @@ const Home = () => {
         </Grid>
 
         <Grid container justifyContent="center" mt={5} mb={5}>
-          <Grid xs={10} md={10} lg={9} >
+          <Grid item xs={10} md={10} lg={9}>
             <Grid container mt={3}>
-              <Grid item lg={6}>
+              <Grid item xs={12} textAlign="center" mb={3}>
                 <Typography
                   variant="h4"
-                 
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  JOIN US
+                </Typography>
+              </Grid>
+              <Grid item md={6} lg={6}>
+                <Typography
+                  variant="h4"
                   className="heading_common_style"
                   color="#223f93"
                 >
                   Who Should Join?
                 </Typography>
-                <Typography variant="h4">Lorem ipsum dolor sit amet. dolor sit amet </Typography>
-                <Typography variant="h6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero est consectetur nemo.</Typography>
-              
-              <Box>
-                <ul>
-                  <li>Lorem ipsum dolor sit amet.amet</li>
-                </ul>
-              </Box>
-              
+                <Typography>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsum consequuntur quisquam ducimus, asperiores animi minus
+                  earum accusamus facere voluptatibus dolor.Ipsum consequuntur
+                  quisquam ducimus, asperiores animi minus earum accusamus
+                  facere voluptatibus dolor.
+                </Typography>
+                <Typography
+                  variant="h4"
+                  className="heading_common_style"
+                  color="#223f93"
+                  mt={1}
+                >
+                  Why You Should Join?
+                </Typography>
+                <Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo quis ducimus quisquam libero ex facere!
+                </Typography>
+                <Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo quis ducimus quisquam libero ex facere!
+                </Typography>
+                <Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo quis ducimus quisquam libero ex facere!
+                </Typography>
+                <Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo quis ducimus quisquam libero ex facere!
+                </Typography>
+                <Button
+                  style={{ marginTop: "20px" }}
+                  onClick={() => handleScrollTo("bookSeat")}
+                >
+                  Book Your Seat
+                </Button>
               </Grid>
-              <Grid item lg={6}>
-                 <img src="bann" alt="img-banner" />
+              <Grid item md={6} lg={6}>
+                <img src="bann" alt="img-banner" />
               </Grid>
             </Grid>
           </Grid>
         </Grid>
+
+        <Grid container justifyContent="center" mt={5} mb={5}>
+          <Grid item xs={10} md={10} lg={9}>
+            <Grid container mt={3}>
+              <Grid item xs={12} textAlign="center" mb={3}>
+                <Typography
+                  variant="h4"
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  TITLE SPONSER
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center" mt={5} mb={5}>
+          <Grid item xs={10} md={10} lg={9}>
+            <Grid container mt={3}>
+              <Grid item xs={12} textAlign="center" mb={3}>
+                <Typography
+                  variant="h4"
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  #WDC2022 COMMUNITY PARTNERS
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                lg={12}
+                sx={{
+                  position: "relative",
+                  height: "100%",
+                  width: "100%",
+                  overflow: "hidden",
+                }}
+              >
+                <Swiper
+                  slidesPerView={5}
+                  spaceBetween={30}
+                  centeredSlides={true}
+                  loop={true}
+                  autoplay={{
+                    delay: 0,
+                    disableOnInteraction: false,
+                  }}
+                  speed={2000}
+                  modules={[Autoplay]}
+                  className="mySecondSwiper"
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                    },
+                    390: {
+                      slidesPerView: 2,
+                    },
+                    502: {
+                      slidesPerView: 3,
+                    },
+                    802: {
+                      slidesPerView: 3,
+                    },
+                    992: {
+                      slidesPerView: 4,
+                    },
+                    1200: {
+                      slidesPerView: 5,
+                    },
+                  }}
+                >
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo1}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo2}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo3}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo4}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo1}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo2}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo3}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo4}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo1}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <Box border="1px solid gray">
+                      <img
+                        src={companyLogo2}
+                        alt="sponser-company"
+                        height={100}
+                      />
+                    </Box>
+                  </SwiperSlide>
+                </Swiper>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center" mt={5} mb={5}>
+          <Grid item xs={10} md={10} lg={9}>
+            <Grid container mt={3}>
+              <Grid item xs={12} textAlign="center" mb={3}>
+                <Typography
+                  variant="h4"
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  ABOUT WOMEN
+                </Typography>
+                <Typography
+                  variant="h4"
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  DIRECTORS CONCLAVE 2024
+                </Typography>
+              </Grid>
+              <Grid item md={6} lg={6}>
+                <img src="i" alt="img-banner" />
+              </Grid>
+              <Grid item md={6} lg={6}>
+                <Typography textAlign="justify">
+                  Lorem ipsum dolor sit, Quae perspiciatis error tempore nulla
+                  cum sunt id iste inventore aut adipisci, tempora quasi nostrum
+                  itaque. Iusto! amet consectetur adipisicing elit. Quae
+                  perspiciatis error tempore nulla cum sunt id iste inventore
+                  aut adipisci, tempora quasi nostrum itaque. Iusto!
+                </Typography>
+                <Typography variant="h6" mt={2}>
+                  Objective of the Conclave is to -
+                </Typography>
+                <Typography ml={2} mt={1} textAlign="justify">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Pariatur, amet optio labore similique aspernatur mollitia!
+                </Typography>
+                <Typography ml={2} textAlign="justify">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Pariatur, amet optio labore similique aspernatur mollitia!
+                </Typography>
+                <Typography ml={2} textAlign="justify">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Pariatur, amet optio labore similique aspernatur mollitia!
+                </Typography>
+                <Typography ml={2} textAlign="justify">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Pariatur, amet optio labore similique aspernatur mollitia!
+                </Typography>
+                <Button
+                  style={{ marginTop: "20px" }}
+                  onClick={() => handleScrollTo("bookSeat")}
+                >
+                  Book Your Seat
+                </Button>
+              </Grid>
+              <Grid item lg={12} mt={5} mb={3}>
+                <Typography
+                  variant="h4"
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  ABOUT MENTORMYBOARD
+                </Typography>
+                <Typography mt={1}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nesciunt totam neque maxime vero illo explicabo iusto culpa
+                  quia, harum nam unde consequatur sunt, labore iste.
+                </Typography>
+                <Typography mt={1}>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Porro recusandae sapiente at, quaerat, voluptates quod
+                  accusantium sint praesentium distinctio molestias nesciunt
+                  nisi similique a illum corporis, non cupiditate neque est sunt
+                  alias labore enim aperiam? Nam voluptate ab doloremque, neque
+                  iusto non atque ratione voluptatibus! Nostrum veritatis
+                  quibusdam reprehenderit ut possimus ad iure inventore dolorem
+                  vel fuga, excepturi incidunt, dicta sequi atque ipsa. Rerum
+                  natus, praesentium nostrum possimus ab voluptate.
+                </Typography>
+                <Typography mt={1}>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Porro recusandae sapiente at, quaerat, voluptates quod
+                  accusantium sint praesentium distinctio molestias nesciunt
+                  nisi similique a illum corporis, non cupiditate neque est sunt
+                  alias labore enim aperiam? Nam voluptate ab doloremque, neque
+                  iusto non atque ratione voluptatibus! Nostrum veritatis
+                  quibusdam reprehenderit ut possimus ad iure inventore dolorem
+                  vel fuga, excepturi incidunt, dicta sequi atque ipsa. Rerum
+                  natus, praesentium nostrum possimus ab voluptate.
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center" mt={5} mb={5}>
+          <Grid item xs={10} md={10} lg={9}>
+            <Grid container mt={3}>
+              <Grid item xs={12} textAlign="center" mb={3}>
+                <Typography
+                  variant="h4"
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  OUR TEAM
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                lg={12}
+                sx={{
+                  position: "relative",
+                  height: "100%",
+                  width: "100%",
+                  overflow: "hidden",
+                }}
+              >
+                <Swiper
+                  slidesPerView={5}
+                  spaceBetween={30}
+                  centeredSlides={true}
+                  loop={true}
+                  autoplay={{
+                    delay: 0,
+                    disableOnInteraction: false,
+                  }}
+                  speed={2000}
+                  modules={[Autoplay]}
+                  className="mySecondSwiper"
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                    },
+                    390: {
+                      slidesPerView: 2,
+                    },
+                    502: {
+                      slidesPerView: 3,
+                    },
+                    802: {
+                      slidesPerView: 3,
+                    },
+                    992: {
+                      slidesPerView: 4,
+                    },
+                    1200: {
+                      slidesPerView: 5,
+                    },
+                  }}
+                >
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest1} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest2} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest3} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest4} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest1} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest2} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest3} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest4} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest1} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                      <Box>
+                        <img src={guest2} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                      </Box>
+                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
+                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                    </Box>
+                  </SwiperSlide>
+                </Swiper>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Footer />
 
         {/*  */}
       </Grid>
