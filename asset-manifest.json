@@ -1,26 +1,37 @@
 {
   "files": {
-    "main.css": "/dhiyodha-mentor-board/static/css/main.bf4f7320.css",
-    "main.js": "/dhiyodha-mentor-board/static/js/main.2592db9c.js",
+    "main.css": "/dhiyodha-mentor-board/static/css/main.c62dbb0b.css",
+    "main.js": "/dhiyodha-mentor-board/static/js/main.3cdb9b53.js",
     "static/js/787.e1caefec.chunk.js": "/dhiyodha-mentor-board/static/js/787.e1caefec.chunk.js",
     "static/media/build (1) (1).jpg": "/dhiyodha-mentor-board/static/media/build (1) (1).2a0f571f8c3eb0565335.jpg",
     "static/media/council.jpg": "/dhiyodha-mentor-board/static/media/council.be9ef1adf93191ea7aea.jpg",
+    "static/media/Dhiyodha (1)n.png": "/dhiyodha-mentor-board/static/media/Dhiyodha (1)n.d5549ebce230a1be7d8c.png",
     "static/media/Dhiyodha.png": "/dhiyodha-mentor-board/static/media/Dhiyodha.be12a7554b461283711c.png",
     "static/media/Oswald-Medium.ttf": "/dhiyodha-mentor-board/static/media/Oswald-Medium.79e266089ef37332d7ae.ttf",
+    "static/media/guest3.jpg": "/dhiyodha-mentor-board/static/media/guest3.bd74e0e9a2879cf0ef6c.jpg",
+    "static/media/guest4.jpg": "/dhiyodha-mentor-board/static/media/guest4.af9537c9c9e830bad352.jpg",
+    "static/media/guest2.jpg": "/dhiyodha-mentor-board/static/media/guest2.6541273317bcb4039dbf.jpg",
+    "static/media/Screenshot 2023-12-22 113209.png": "/dhiyodha-mentor-board/static/media/Screenshot 2023-12-22 113209.5771b761a6da6d9dea5b.png",
+    "static/media/Screenshot 2023-12-22 113148.png": "/dhiyodha-mentor-board/static/media/Screenshot 2023-12-22 113148.b85062fe15b94cbf7aa9.png",
     "static/media/guest1.jpg": "/dhiyodha-mentor-board/static/media/guest1.6919ce9c31886e70a0bc.jpg",
+    "static/media/Screenshot 2023-12-22 113138.png": "/dhiyodha-mentor-board/static/media/Screenshot 2023-12-22 113138.93a374f220b8c5ca25b2.png",
+    "static/media/Screenshot 2023-12-22 113156.png": "/dhiyodha-mentor-board/static/media/Screenshot 2023-12-22 113156.4ad3bd870a6233eb8be9.png",
+    "static/media/worldIcon.svg": "/dhiyodha-mentor-board/static/media/worldIcon.fa9eb1544b081bd9798ab6f37a5fd1ad.svg",
     "static/media/growthIcon.svg": "/dhiyodha-mentor-board/static/media/growthIcon.27ac237d5bf05fc5520d335a1ca23394.svg",
     "static/media/logo.svg": "/dhiyodha-mentor-board/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/instaIcon.svg": "/dhiyodha-mentor-board/static/media/instaIcon.8d960687610dc2485257f7dce8cbb288.svg",
     "static/media/linkedinIcon.svg": "/dhiyodha-mentor-board/static/media/linkedinIcon.06ef3ae3b81b61fefdfc7a0b15fb9e8e.svg",
     "static/media/twitterIcon.svg": "/dhiyodha-mentor-board/static/media/twitterIcon.56a7cd5f9e459ead67a568162eb71079.svg",
     "index.html": "/dhiyodha-mentor-board/index.html",
+    "static/media/phoneIcon.svg": "/dhiyodha-mentor-board/static/media/phoneIcon.1d032be7b6874c21ccafc8537a6391a0.svg",
+    "static/media/gmailIcon.svg": "/dhiyodha-mentor-board/static/media/gmailIcon.70bbf2a8d936fc22532a000f1f83f799.svg",
     "static/media/fbIcon.svg": "/dhiyodha-mentor-board/static/media/fbIcon.80b0812d6c1a400d545f62b2a3b23ec8.svg",
-    "main.bf4f7320.css.map": "/dhiyodha-mentor-board/static/css/main.bf4f7320.css.map",
-    "main.2592db9c.js.map": "/dhiyodha-mentor-board/static/js/main.2592db9c.js.map",
+    "main.c62dbb0b.css.map": "/dhiyodha-mentor-board/static/css/main.c62dbb0b.css.map",
+    "main.3cdb9b53.js.map": "/dhiyodha-mentor-board/static/js/main.3cdb9b53.js.map",
     "787.e1caefec.chunk.js.map": "/dhiyodha-mentor-board/static/js/787.e1caefec.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf4f7320.css",
-    "static/js/main.2592db9c.js"
+    "static/css/main.c62dbb0b.css",
+    "static/js/main.3cdb9b53.js"
   ]
 }
