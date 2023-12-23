@@ -626,6 +626,282 @@ const Home = () => {
         </Grid>
 
         <Grid container justifyContent="center" mt={5} mb={5}>
+          <Grid item xs={10} md={10} lg={9} textAlign="start">
+            <Typography
+              variant="h4"
+              mb={2}
+              className="heading_common_style"
+              color="#223f93"
+              sx={{
+                position: "relative",
+                "::after": {
+                  content: "''",
+                  position: "absolute",
+                  height: "1px",
+                  width: "180px",
+                  backgroundColor: "blue",
+                  bottom: "-5px",
+                  left: 0,
+                },
+              }}
+            >
+              CHIEF GUEST
+            </Typography>
+          </Grid>
+          <Grid item xs={10} md={10} lg={9} textAlign="start" mt={3}>
+            <Grid container columnSpacing={2} rowSpacing={2}>
+              <Grid item xs={12} sm={6} md={4}>
+                <Box>
+                  <img
+                    src={guest2}
+                    alt="chief-guest"
+                    height={250}
+                    width="100%"
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={12} sm={6} md={8}>
+                <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                  Smt. Nirmala Sitharaman
+                </Typography>
+                <Typography>
+                  Hon'ble Union Minister of Finance & Corporate Affairs,
+                  Government of India
+                </Typography>
+                <Typography>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Tenetur culpa incidunt sunt molestias dicta quas quisquam eos
+                  excepturi obcaecati ut! Culpa quod impedit voluptate
+                  reprehenderit voluptatibus! Optio similique quo eligendi qui
+                  odit, aut ullam nihil! Temporibus in culpa ad ab.
+                </Typography>
+                <Typography></Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={10} md={10} lg={9} textAlign="center">
+            <Typography
+              variant="h4"
+              mt={2}
+              className="heading_common_style"
+              color="#223f93"
+            >
+              KEY NOTE SPEAKERS
+            </Typography>
+          </Grid>
+          <Grid item xs={10} md={10} lg={9} textAlign="start" mt={4}>
+            <Grid
+              container
+              justifyContent="center"
+              columnSpacing={2}
+              rowSpacing={2}
+            >
+              <Grid item xs={12} sm={6} md={5}>
+                <Grid container>
+                  <Grid item md={12}>
+                    <Box>
+                      <img src={guest2} alt="chief-guest" height={250} />
+                    </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Typography>Smt. Nirmala Sitharaman</Typography>
+                    <Typography>
+                      Hon'ble Union Minister of Finance & Corporate Affairs,
+                      Government of India
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12} sm={6} md={5}>
+                <Grid container>
+                  <Grid item md={12}>
+                    <Box>
+                      <img src={guest2} alt="chief-guest" height={250} />
+                    </Box>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Typography>Smt. Nirmala Sitharaman</Typography>
+                    <Typography>
+                      Hon'ble Union Minister of Finance & Corporate Affairs,
+                      Government of India
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center" mt={5} mb={5}>
+          <Grid item xs={10} md={10} lg={9}>
+            <Grid
+              container
+              justifyContent="space-evenly"
+              columnSpacing={{ xs: 1, sm: 2, md: 1, lg: 2 }}
+            >
+              <Grid item md={4} textAlign="center" sx={{ overflow: "hidden" }}>
+                <Typography
+                  variant="h4"
+                  mb={2}
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  CHIEF GUEST
+                </Typography>
+                <Box className="guest-img-container">
+                  <Box height="100%" width="100%">
+                    <img
+                      src={guest2}
+                      alt="chief-guest"
+                      height={350}
+                      width="100%"
+                      style={{
+                        border: "4px solid white",
+                        // boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </Box>
+                  <Box className="guest-img-hover-hide">
+                    <Typography
+                      fontSize="16px"
+                      fontWeight={600}
+                      color="#223f93"
+                    >
+                      Smt. Nirmala Sitharaman
+                    </Typography>
+                    <Typography>
+                      Hon'ble Union Minister of Finance & Corporate Affairs,
+                      Government of India
+                    </Typography>
+                  </Box>
+                  <Box className="guest-img-hover-content">
+                    <Typography
+                      fontSize="16px"
+                      fontWeight={600}
+                      color="#223f93"
+                    >
+                      Smt. Nirmala Sitharaman
+                    </Typography>
+                    <Typography>
+                      Hon'ble Union Minister of Finance & Corporate Affairs,
+                      Government of India
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                md={8}
+                lg={6}
+                textAlign="center"
+                sx={{ overflow: "hidden" }}
+              >
+                <Typography
+                  variant="h4"
+                  mb={2}
+                  className="heading_common_style"
+                  color="#223f93"
+                >
+                  KEY NOTE SPEAKERS
+                </Typography>
+                <Grid container columnSpacing={{ xs: 1, sm: 2, md: 1, lg: 2 }}>
+                  <Grid item xs={6}>
+                    <Box className="guest-img-container">
+                      <Box height="100%" width="100%">
+                        <img
+                          src={guest2}
+                          alt="chief-guest"
+                          height={350}
+                          width="100%"
+                          style={{
+                            border: "4px solid white",
+                            // boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </Box>
+                      <Box className="guest-img-hover-hide">
+                        <Typography
+                          fontSize="16px"
+                          fontWeight={600}
+                          color="#223f93"
+                        >
+                          Smt. Nirmala Sitharaman
+                        </Typography>
+                        <Typography>
+                          Hon'ble Union Minister of Finance & Corporate Affairs,
+                          Government of India
+                        </Typography>
+                      </Box>
+                      <Box className="guest-img-hover-content">
+                        <Typography
+                          fontSize="16px"
+                          fontWeight={600}
+                          color="#223f93"
+                        >
+                          Smt. Nirmala Sitharaman
+                        </Typography>
+                        <Typography>
+                          Hon'ble Union Minister of Finance & Corporate Affairs,
+                          Government of India
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box className="guest-img-container">
+                      <Box height="100%" width="100%">
+                        <img
+                          src={guest2}
+                          alt="chief-guest"
+                          height={350}
+                          width="100%"
+                          style={{
+                            border: "4px solid white",
+                            // boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </Box>
+                      <Box className="guest-img-hover-hide">
+                        <Typography
+                          fontSize="16px"
+                          fontWeight={600}
+                          color="#223f93"
+                        >
+                          Smt. Nirmala Sitharaman
+                        </Typography>
+                        <Typography>
+                          Hon'ble Union Minister of Finance & Corporate Affairs,
+                          Government of India
+                        </Typography>
+                      </Box>
+                      <Box className="guest-img-hover-content">
+                        <Typography
+                          fontSize="16px"
+                          fontWeight={600}
+                          color="#223f93"
+                        >
+                          Smt. Nirmala Sitharaman
+                        </Typography>
+                        <Typography>
+                          Hon'ble Union Minister of Finance & Corporate Affairs,
+                          Government of India
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center" mt={5} mb={5}>
           <Grid item xs={10} md={10} lg={9} textAlign="center">
             <Typography
               variant="h4"
@@ -633,7 +909,7 @@ const Home = () => {
               className="heading_common_style"
               color="#223f93"
             >
-              CHEIF GUEST
+              SPEAKERS WHO ARE EXPERTS IN THEIR FIELDS
             </Typography>
           </Grid>
           <Grid item xs={10} md={10} lg={9} textAlign="start" mt={4}>
@@ -657,7 +933,7 @@ const Home = () => {
                       </Box>
                     </Box>
                   </Box>
-                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
+                  <Typography fontWeight={600} mt={1} pl={1}>
                     Smt. Nirmala Sitharaman
                   </Typography>
                   <Typography pl={1}>
@@ -870,6 +1146,30 @@ const Home = () => {
               </Grid>
               <Grid item md={6} lg={6}>
                 <img src="bann" alt="img-banner" />
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center"   sx={{backgroundColor:"#d0ddff"}}>
+          <Grid item xs={10} md={10} lg={9} py={2}>
+            <Grid container columnSpacing={2} >
+              <Grid item xs={12} md={3} p={2}>
+                 <Typography>FAQ</Typography>
+                 <Typography variant="h4"> Common Questions</Typography>
+                 <Typography >Here are some of the most common questions that we get</Typography>
+              </Grid>
+              <Grid item xs={12} md={9}  p={2}>
+                 <Typography variant="h5">What is My Mentor Board?</Typography>
+                 <Typography mt={1}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate perspiciatis ducimus earum ipsum? Inventore temporibus placeat et id excepturi.</Typography>
+                 <Typography mt={1} variant="h5">How does My Mentor Board work?</Typography>
+                 <Typography mt={1}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sed magnam! Veritatis nobis temporibus ex! Cupiditate tenetur itaque dolorum quidem, ut quas reprehenderit labore odit?</Typography>
+                 <Typography mt={1} variant="h5">Who can become a mentor on My Mentor Board?</Typography>
+                 <Typography mt={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt porro, distinctio, qui itaque accusantium hic minus nulla quisquam repudiandae eius, vero consequatur soluta optio unde fuga rem labore ea aperiam.</Typography>
+                 <Typography mt={1} variant="h5">Is there a fee for using My Mentor Board?</Typography>
+                 <Typography mt={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt porro, distinctio, qui itaque accusantium hic minus nulla quisquam repudiandae eius, vero consequatur soluta optio unde fuga rem labore ea aperiam.</Typography>
+                 <Typography mt={1} variant="h5">How can i contact the support team of My Mentor Board?</Typography>
+                 <Typography mt={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt porro, distinctio, qui itaque accusantium hic minus nulla quisquam repudiandae eius, vero consequatur soluta optio unde fuga rem labore ea aperiam.</Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -1194,93 +1494,283 @@ const Home = () => {
                   }}
                 >
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest1} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest1}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest2} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest2}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest3} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest3}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest4} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest4}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest1} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest1}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest2} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest2}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest3} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest3}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest4} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest4}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest1} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest1}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                   <SwiperSlide>
-                  <Box border="1px solid #9e9e9e" p={1} textAlign="center">
+                    <Box border="1px solid #9e9e9e" p={1} textAlign="center">
                       <Box>
-                        <img src={guest2} alt="sponser-company" height={100} width={100} style={{border:"1px solid #9e9e9e",borderRadius:"50%"}}/>
+                        <img
+                          src={guest2}
+                          alt="sponser-company"
+                          height={100}
+                          width={100}
+                          style={{
+                            border: "1px solid #9e9e9e",
+                            borderRadius: "50%",
+                          }}
+                        />
                       </Box>
-                      <Typography style={{fontSize:"14px",fontWeight:"600",color:"#323232"}}>Amisha Vora</Typography>
-                      <Typography style={{fontSize:"14px"}}>Owner and Joint MD - Prabhudas Lilladher</Typography>
+                      <Typography
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "600",
+                          color: "#323232",
+                        }}
+                      >
+                        Amisha Vora
+                      </Typography>
+                      <Typography style={{ fontSize: "14px" }}>
+                        Owner and Joint MD - Prabhudas Lilladher
+                      </Typography>
                     </Box>
                   </SwiperSlide>
                 </Swiper>

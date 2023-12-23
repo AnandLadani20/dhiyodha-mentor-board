@@ -191,3 +191,31 @@ a {
     color: #223f93;
     
 }
+/*  */
+.guest-img-container {
+    position: relative;
+
+}
+.guest-img-hover-content{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    padding: 5px;
+    bottom: 10%;
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.4s ease;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    opacity: 0;
+}
+.guest-img-container:hover .guest-img-hover-content {
+    opacity: 1;
+}
+.guest-img-hover-hide {
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+.guest-img-container:hover .guest-img-hover-hide{
+    opacity: 0;
+}
