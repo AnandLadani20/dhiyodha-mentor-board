@@ -13,6 +13,14 @@ import ModalBtn from "../components/common/ModalBtn";
 import Register from "../components/common/Register";
 import SponsorForm from "../components/common/SponsorForm";
 import herobg from "../files/images/council.jpg";
+import heroImage from "../files/images/heroposter5.png";
+import dotImage from "../files/images/dots.png";
+import joinUsImg from "../files/images/whyUs.png";
+
+import womenPoster from "../files/images/poster.png";
+import womenbanner from "../files/images/speechImg3.jpg";
+
+import vectorbg from "../files/images/Vector (1).png";
 import guest1 from "../files/images/guest1.jpg";
 import guest2 from "../files/images/guest2.jpg";
 import guest3 from "../files/images/guest3.jpg";
@@ -39,6 +47,20 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 const Home = () => {
+  const [activeScale, setActiveScale] = useState(false);
+
+  useEffect(() => {
+    // This code runs when the component mounts
+    setActiveScale(true);
+
+    // If you want to perform cleanup when the component unmounts,
+    // you can return a function from the useEffect
+    return () => {
+      // Cleanup code (optional)
+      // setActiveScale(false);
+    };
+  }, []);
+
   //  CountDownTimer
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
   const [showButton, setShowButton] = useState(false);
@@ -104,7 +126,7 @@ const Home = () => {
         <Header />
         <Grid
           height="calc(100% - 90px)"
-          overflow="auto"
+          overflow="hidden"
           sx={{ position: "relative" }}
         >
           <Box
@@ -115,12 +137,6 @@ const Home = () => {
               height: "100%",
               width: "100%",
               transition: "transform 0.3s ease",
-
-              // backgroundAttachment:"fixed",
-              // backgroundSize:"cover",
-              // backgroundRepeat:"no-repeat",
-              // backgroundPosition:"center",
-              // transition: "transform 0.3s ease",
               "::before": {
                 content: "' '",
                 position: "absolute",
@@ -129,7 +145,8 @@ const Home = () => {
                 left: 0,
                 width: "100%",
                 height: "100%",
-                backgroundColor: "#1f5cff",
+                backgroundColor: "#0038e0",
+                // background:"linear-gradient(to right bottom,#0c62e1,#0998d4,#33bba1)",
                 opacity: 0.7,
               },
             }}
@@ -142,86 +159,133 @@ const Home = () => {
                 width: "100%",
                 position: "absolute",
                 zIndex: "-2",
+                transform: "scale(1)",
+                transition: "transform 6s ease",
               }}
+              className={
+                activeScale
+                  ? "hero-bg-imgStyle hero-bg-scale "
+                  : "hero-bg-imgStyle"
+              }
             />
           </Box>
           <Grid
             container
             justifyContent="center"
             height="100%"
-            alignItems="flex-end"
+            alignItems="center"
             px="25px"
             pt="25px"
           >
-            <Grid
-              item
-              xs={12}
-              md={6}
-              p={3}
-              sx={{ backgroundColor: "#fff", textAlign: "center" }}
-            >
-              <Typography
-                variant="h2"
-                color="#ed3337"
-                sx={{
-                  lineHeight: "3.5rem",
-                  fontWeight: "500",
-                  marginBottom: "10px",
-                }}
-                className="heading_common_style"
-              >
-                WOMEN DIRECTORS
-              </Typography>
-              <Typography
-                variant="h2"
-                color="#ed3337"
-                sx={{
-                  lineHeight: "3.5rem",
-                  fontWeight: "500",
-                  marginBottom: "10px",
-                }}
-                className="heading_common_style"
-              >
-                CONCLAVE 2024
-              </Typography>
-              <Typography
-                variant="h2"
-                color="#223f93"
-                sx={{
-                  lineHeight: "3.5rem",
-                  fontWeight: "500",
-                  marginBottom: "10px",
-                }}
-                className="heading_common_style"
-              >
-                #WDC2024
-              </Typography>
-              <Typography
-                variant="h5"
-                color="#000"
-                sx={{
-                  lineHeight: "3rem",
-                  fontWeight: "500",
-                  marginBottom: "10px",
-                }}
-                className="heading_common_style"
-              >
-                CELEBRATE WOMEN BOARD LEADERS
-              </Typography>
-              <Button
-                sx={{
-                  backgroundColor: "#fff",
-                  border: "1px solid #ed3337",
-                  borderRadius: "5px",
-                  color: "#ed3337",
-                  fontSize: "16px",
-                  ":hover": { backgroundColor: "#ed3337", color: "#fff" },
-                }}
-              >
-                Book Your Seat
-              </Button>
+            <Grid item xs={10} md={10} lg={9}>
+              <Grid container>
+                <Grid item xs={12} md={6}>
+                  <Box className="hero-text-bg">
+                    <Typography
+                      variant="h2"
+                      color="#fff"
+                      sx={{
+                        lineHeight: "3.5rem",
+                        fontWeight: "500",
+                        marginBottom: "10px",
+                        // backgroundColor: "#223f93",
+                        padding: "10px",
+                        display: "inline-block",
+                        textAlign: "center",
+                        // boxShadow: "-4px 4px 0px 0px #e17e80bf",
+                      }}
+                      className="heading_common_style"
+                    >
+                      WOMEN DIRECTORS
+                    </Typography>
+                    <Typography
+                      variant="h2"
+                      color="#fff"
+                      sx={{
+                        lineHeight: "3.5rem",
+                        fontWeight: "500",
+                        marginBottom: "10px",
+                        // backgroundColor: "#223f93",
+                        // background:"linear-gradient(to right bottom,#0c62e1,#0998d4,#33bba1)",
+                        padding: "10px",
+                        display: "inline-block",
+                        textAlign: "center",
+                        // boxShadow: "-4px 4px 0px 0px #e17e80bf",
+                      }}
+                      className="heading_common_style"
+                    >
+                      CONCLAVE 2024
+                    </Typography>
+                    <Typography
+                      variant="h2"
+                      color="#fff"
+                      sx={{
+                        lineHeight: "3.5rem",
+                        fontWeight: "500",
+                        marginBottom: "10px",
+                        // backgroundColor: "#223f93",
+                        // background:"linear-gradient(to right bottom,#0c62e1,#0998d4,#33bba1)",
+                        display: "inline-block",
+                        padding: "10px",
+                        textAlign: "center",
+                        // boxShadow: "-4px 4px 0px 0px #e17e80bf",
+                      }}
+                      className="heading_common_style"
+                    >
+                      #WDC2024
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      color="#fff"
+                      sx={{
+                        lineHeight: "3rem",
+                        fontWeight: "500",
+                        marginBottom: "10px",
+                        // backgroundColor: "#223f93",
+                        // background:"linear-gradient(to right bottom,#0c62e1,#0998d4,#33bba1)",
+                        padding: "10px",
+                        textAlign: "center",
+                        display: "inline-block",
+                        // boxShadow: "-4px 4px 0px 0px #e17e80bf",
+                      }}
+                      className="heading_common_style"
+                    >
+                      CELEBRATE WOMEN BOARD LEADERS
+                    </Typography>
+
+                    <Button
+                      sx={{
+                        backgroundColor: "#fff",
+                        border: "1px solid #ed3337",
+                        borderRadius: "5px",
+                        display: "block",
+                        color: "#ed3337",
+                        fontSize: "16px",
+                        ":hover": { backgroundColor: "#ed3337", color: "#fff" },
+                      }}
+                    >
+                      Book Your Seat
+                    </Button>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Box
+                    sx={{
+                      position: "relative",
+                      display: "flex",
+                      justifyContent: "flex-end",
+                    }}
+                  >
+                    {/* <Box sx={{position:"absolute",top:"-40px",left:"40px"}}>
+                      <img src={dotImage} alt="dots" height={150}/>
+                    </Box> */}
+                    <Box>
+                      <img src={heroImage} alt="hero" height={400} />
+                    </Box>
+                  </Box>
+                </Grid>
+              </Grid>
             </Grid>
-            {/* <Grid item xs={8} md={4.5}></Grid> */}
           </Grid>
         </Grid>
 
@@ -326,18 +390,17 @@ const Home = () => {
           </Grid>
         </Grid>
 
-        <Grid
-          container
-          justifyContent="center"
-          direction="column"
-          alignItems="center"
-          spacing={2}
-          marginBottom={4}
-        >
-          <Grid item>
-            <img src="wdwe" alt="woman-poster" />
+        <Grid container justifyContent="center" mb={4}>
+          <Grid item xs={10} md={10} lg={9}>
+            <img
+              src={womenPoster}
+              alt="woman-poster"
+              width="100%"
+              height="auto"
+              overflow="hidden"
+            />
           </Grid>
-          <Grid item textAlign="center">
+          <Grid item xs={10} md={10} lg={9} textAlign="center" mt={2}>
             <Typography
               variant="h4"
               mb={2}
@@ -356,13 +419,119 @@ const Home = () => {
         <Grid
           container
           justifyContent="center"
-          height="450px"
-          py={3}
           position="relative"
-          sx={{ backgroundColor: "transparent" }}
           id="bookSeat"
         >
-          <Grid
+          <Grid item xs={10} md={10} lg={9} bgcolor="#f3f4f6" p={2}>
+            <Grid container justifyContent="space-between">
+              <Grid item xs={12} md={12} lg={3}>
+                <Box>
+                  <Typography variant="h4" sx={{ fontWeight: "600" }}>
+                    Choose the perfect plan
+                  </Typography>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Distinctio, natus.
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={12} lg={8}>
+                <Grid
+                  container
+                  rowSpacing={{ xs: 2, sm: 1, md: 2 }}
+                  columnSpacing={{ xs: 2, sm: 1, md: 2 }}
+                >
+                  <Grid item xs={12} sm={6} md={6}>
+                    <Paper
+                      sx={{
+                        backgroundColor: "#ffffff73",
+                        border: "1px solid #223f93",
+                        padding: "8px",
+                        textAlign: "center",
+                        color: "#000",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    >
+                      <Typography
+                        variant="h6"
+                        fontWeight={600}
+                        className="heading_common_style"
+                        mt={2}
+                      >
+                        Online Event
+                      </Typography>
+                      <Typography>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Voluptas, voluptatibus.
+                      </Typography>
+                      <Typography
+                        variant="h5"
+                        fontWeight={500}
+                        mt={2}
+                        className="heading_common_style"
+                      >
+                        <span style={{ fontSize: "14px" }}>₹</span> 799/-{" "}
+                        <span style={{ fontSize: "14px" }}>+ GST</span>
+                      </Typography>
+
+                      <Box my={2}>
+                        <ModalBtn btnName="Book Now">
+                          <Typography variant="h5" mb={1}>
+                            Register
+                          </Typography>
+                          <Register />
+                        </ModalBtn>
+                      </Box>
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={6}>
+                    <Paper
+                      sx={{
+                        backgroundColor: "#ffffff73",
+                        border: "1px solid #223f93",
+                        padding: "8px",
+                        textAlign: "center",
+                        color: "#000",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    >
+                      <Typography
+                        variant="h6"
+                        fontWeight={600}
+                        className="heading_common_style"
+                        mt={2}
+                      >
+                        Physical Presence
+                      </Typography>
+                      <Typography>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Voluptas, voluptatibus.
+                      </Typography>
+                      <Typography
+                        variant="h5"
+                        fontWeight={500}
+                        mt={2}
+                        className="heading_common_style"
+                      >
+                        <span style={{ fontSize: "14px" }}>₹</span> 1999/-
+                        <span style={{ fontSize: "14px" }}> + GST</span>
+                      </Typography>
+
+                      <Box my={2}>
+                        <ModalBtn btnName="Book Now">
+                          <Typography variant="h5">register</Typography>
+                          <Register />
+                        </ModalBtn>
+                      </Box>
+                    </Paper>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+          {/* <Grid
             item
             xs={10}
             sm={5}
@@ -375,50 +544,7 @@ const Home = () => {
                 boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
               },
             }}
-          >
-            <Paper
-              sx={{
-                backgroundColor: "#ffffff73",
-                border: "1px solid #223f93",
-                padding: "8px",
-                textAlign: "center",
-                color: "#000",
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <Typography
-                variant="h4"
-                fontWeight={600}
-                className="heading_common_style"
-                mt={2}
-              >
-                Title
-              </Typography>
-              <Typography>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Voluptas, voluptatibus.
-              </Typography>
-              <Typography
-                variant="h4"
-                fontWeight={500}
-                mt={2}
-                className="heading_common_style"
-              >
-                <span style={{ fontSize: "14px" }}>₹</span> 799/-{" "}
-                <span style={{ fontSize: "14px" }}>+ GST</span>
-              </Typography>
-
-              <Box mt={2}>
-                <ModalBtn btnName="Book Now">
-                  <Typography variant="h5">register</Typography>
-                  <Register />
-                </ModalBtn>
-              </Box>
-              <hr style={{ marginTop: "20px" }} />
-              <Typography variant="h6">Features:</Typography>
-            </Paper>
-          </Grid>
+          ></Grid>
 
           <Grid
             item
@@ -435,48 +561,7 @@ const Home = () => {
                 boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
               },
             }}
-          >
-            <Paper
-              sx={{
-                backgroundColor: "#ffffff73",
-                border: "1px solid #223f93",
-                padding: "8px",
-                textAlign: "center",
-                color: "#000",
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <Typography
-                variant="h5"
-                fontWeight={600}
-                className="heading_common_style"
-                mt={2}
-              >
-                Title
-              </Typography>
-              <Typography>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Voluptas, voluptatibus.
-              </Typography>
-              <Typography
-                variant="h5"
-                fontWeight={600}
-                mt={2}
-                className="heading_common_style"
-              >
-                <span style={{ fontSize: "14px" }}>₹</span> 1999/-
-                <span style={{ fontSize: "14px" }}> + GST</span>
-              </Typography>
-
-              <Box mt={2}>
-                <ModalBtn btnName="Book Now">
-                  <Typography variant="h5">register</Typography>
-                  <Register />
-                </ModalBtn>
-              </Box>
-            </Paper>
-          </Grid>
+          ></Grid> */}
 
           {/* <Box className="bg-banner-img"></Box> */}
         </Grid>
@@ -1087,6 +1172,47 @@ const Home = () => {
         </Grid>
 
         <Grid container justifyContent="center" mt={5} mb={5}>
+          <Grid item xs={12}>
+            <Box
+              height="400px"
+              width="100%"
+              sx={{
+                position: "relative",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                "::before": {
+                  content: "' '",
+                  position: "absolute",
+                  zIndex: "-1",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "400px",
+                  backgroundColor: "#1f5cff",
+                  opacity: 0.7,
+                },
+              }}
+            >
+              <img
+                src={womenbanner}
+                alt="women-bg-poster"
+                style={{
+                  objectFit: "cover",
+                  position: "absolute",
+                  zIndex: "-2",
+                  height: "400px",
+                  width: "100%",
+                }}
+              />
+              <Typography variant="h4" textAlign="center" color="#fff">
+                Lorem ipsum dolor sit amet.
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+
+        <Grid container justifyContent="center" mt={5} mb={5}>
           <Grid item xs={10} md={10} lg={9}>
             <Grid container mt={3}>
               <Grid item xs={12} textAlign="center" mb={3}>
@@ -1145,31 +1271,78 @@ const Home = () => {
                 </Button>
               </Grid>
               <Grid item md={6} lg={6}>
-                <img src="bann" alt="img-banner" />
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                  }}
+                >
+                  <img src={joinUsImg} alt="img-banner" height={400} />
+                </Box>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
 
-        <Grid container justifyContent="center"   sx={{backgroundColor:"#d0ddff"}}>
+        <Grid
+          container
+          justifyContent="center"
+          sx={{ backgroundColor: "#d0ddff" }}
+        >
           <Grid item xs={10} md={10} lg={9} py={2}>
-            <Grid container columnSpacing={2} >
+            <Grid container columnSpacing={2}>
               <Grid item xs={12} md={3} p={2}>
-                 <Typography>FAQ</Typography>
-                 <Typography variant="h4"> Common Questions</Typography>
-                 <Typography >Here are some of the most common questions that we get</Typography>
+                <Typography>FAQ</Typography>
+                <Typography variant="h4"> Common Questions</Typography>
+                <Typography>
+                  Here are some of the most common questions that we get
+                </Typography>
               </Grid>
-              <Grid item xs={12} md={9}  p={2}>
-                 <Typography variant="h5">What is My Mentor Board?</Typography>
-                 <Typography mt={1}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate perspiciatis ducimus earum ipsum? Inventore temporibus placeat et id excepturi.</Typography>
-                 <Typography mt={1} variant="h5">How does My Mentor Board work?</Typography>
-                 <Typography mt={1}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sed magnam! Veritatis nobis temporibus ex! Cupiditate tenetur itaque dolorum quidem, ut quas reprehenderit labore odit?</Typography>
-                 <Typography mt={1} variant="h5">Who can become a mentor on My Mentor Board?</Typography>
-                 <Typography mt={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt porro, distinctio, qui itaque accusantium hic minus nulla quisquam repudiandae eius, vero consequatur soluta optio unde fuga rem labore ea aperiam.</Typography>
-                 <Typography mt={1} variant="h5">Is there a fee for using My Mentor Board?</Typography>
-                 <Typography mt={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt porro, distinctio, qui itaque accusantium hic minus nulla quisquam repudiandae eius, vero consequatur soluta optio unde fuga rem labore ea aperiam.</Typography>
-                 <Typography mt={1} variant="h5">How can i contact the support team of My Mentor Board?</Typography>
-                 <Typography mt={1}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt porro, distinctio, qui itaque accusantium hic minus nulla quisquam repudiandae eius, vero consequatur soluta optio unde fuga rem labore ea aperiam.</Typography>
+              <Grid item xs={12} md={9} p={2}>
+                <Typography variant="h5">What is My Mentor Board?</Typography>
+                <Typography mt={1}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolorum voluptate perspiciatis ducimus earum ipsum? Inventore
+                  temporibus placeat et id excepturi.
+                </Typography>
+                <Typography mt={1} variant="h5">
+                  How does My Mentor Board work?
+                </Typography>
+                <Typography mt={1}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Neque, sed magnam! Veritatis nobis temporibus ex! Cupiditate
+                  tenetur itaque dolorum quidem, ut quas reprehenderit labore
+                  odit?
+                </Typography>
+                <Typography mt={1} variant="h5">
+                  Who can become a mentor on My Mentor Board?
+                </Typography>
+                <Typography mt={1}>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Nesciunt porro, distinctio, qui itaque accusantium hic minus
+                  nulla quisquam repudiandae eius, vero consequatur soluta optio
+                  unde fuga rem labore ea aperiam.
+                </Typography>
+                <Typography mt={1} variant="h5">
+                  Is there a fee for using My Mentor Board?
+                </Typography>
+                <Typography mt={1}>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Nesciunt porro, distinctio, qui itaque accusantium hic minus
+                  nulla quisquam repudiandae eius, vero consequatur soluta optio
+                  unde fuga rem labore ea aperiam.
+                </Typography>
+                <Typography mt={1} variant="h5">
+                  How can i contact the support team of My Mentor Board?
+                </Typography>
+                <Typography mt={1}>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Nesciunt porro, distinctio, qui itaque accusantium hic minus
+                  nulla quisquam repudiandae eius, vero consequatur soluta optio
+                  unde fuga rem labore ea aperiam.
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -1458,9 +1631,402 @@ const Home = () => {
                   height: "100%",
                   width: "100%",
                   overflow: "hidden",
+                  display: "flex",
+                  // backgroundColor:"#f9fafb",
                 }}
               >
-                <Swiper
+                <Box sx={{ display: "flex" }} className="main-team-member-box">
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box
+                  sx={{ display: "flex", position: "absolute", top: "0" }}
+                  className="main-team-member-box2"
+                >
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                  <Box className="team-member-box">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <img
+                        src={guest1}
+                        alt="sponser-company"
+                        height={100}
+                        width={100}
+                        style={{
+                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    </Box>
+                    <Typography
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: "600",
+                        color: "#323232",
+                      }}
+                    >
+                      Amisha Vora
+                    </Typography>
+                    <Typography style={{ fontSize: "14px" }}>
+                      Owner and Joint MD - Prabhudas Lilladher
+                    </Typography>
+                  </Box>
+                </Box>
+                {/* <Swiper
                   slidesPerView={5}
                   spaceBetween={30}
                   centeredSlides={true}
@@ -1502,7 +2068,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1530,7 +2096,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1558,7 +2124,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1586,7 +2152,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1614,7 +2180,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1642,7 +2208,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1670,7 +2236,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1698,7 +2264,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1726,7 +2292,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1754,7 +2320,7 @@ const Home = () => {
                           height={100}
                           width={100}
                           style={{
-                            border: "1px solid #9e9e9e",
+                            border: "1px solid #9e9e9e",marginBottom:"5px",
                             borderRadius: "50%",
                           }}
                         />
@@ -1773,7 +2339,7 @@ const Home = () => {
                       </Typography>
                     </Box>
                   </SwiperSlide>
-                </Swiper>
+                </Swiper> */}
               </Grid>
             </Grid>
           </Grid>

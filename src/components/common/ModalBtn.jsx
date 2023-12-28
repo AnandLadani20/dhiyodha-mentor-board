@@ -14,11 +14,12 @@ const ModalBtn = forwardRef(({btnName,children},ref) => {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: 400,
-        bgcolor: "#fff",
-        border: "2px solid #000",
+        width: 500,
+        backgroundColor:"#3678cc",
+        color:"#fff",
         boxShadow: 24,
-        p: 1,
+        p: 3,
+        margin:"40px 0px"
       };
 
   return (
@@ -30,6 +31,7 @@ const ModalBtn = forwardRef(({btnName,children},ref) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         ref={ref}
+        sx={{ overflowY: "auto",}}
       >
         <Box sx={style}>
           {children}

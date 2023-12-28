@@ -55,7 +55,7 @@ const SponsorForm = () => {
     <>
       <AsyncForm
         onSubmit={handleSubmit(registerRequestForm)}
-        buttonSx={{ width: "60%", displa: "block", margin: "0 auto" }}
+        buttonSx={{ width: "100%", displa: "block", margin: "0 auto" }}
         gridProps={{
           container: true,
           columnSpacing: "12px",

@@ -17,6 +17,7 @@ let Customize = createTheme({
         gradient: "linear-gradient(to right bottom, #223f93, #4bc2ec)",
         background: {
             default: "#fff",
+            // default: "#f1f1f1",
             paper: "#fff",
             card: "#223f93"
         },
@@ -64,7 +65,7 @@ let Theme = createTheme({
             styleOverrides: {
                 [Customize.breakpoints.up("md")]: {
                     "*::-webkit-scrollbar": {
-                        display: "none",
+                        
                     },
                     "*::-webkit-scrollbar-track": {
                         "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.00)",
@@ -120,7 +121,7 @@ let Theme = createTheme({
             },
             styleOverrides: {
                 root: {
-                    
+                    backgroundColor:"#fff",
                     border: Customize.shape.border,
                     padding: "2px 6px",
                     borderRadius: "2px",

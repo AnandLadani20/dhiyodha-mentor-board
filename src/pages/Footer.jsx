@@ -18,7 +18,7 @@ const Footer = () => {
         container
         py={3}
         justifyContent="center"
-        style={{ backgroundColor: "#f8faff" }}
+        style={{ backgroundColor: "#ecf1ff" }}
       >
         <Grid item xs={10} md={10} lg={9}>
           <Grid

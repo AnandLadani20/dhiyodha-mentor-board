@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Grid, Typography,Fab } from "@mui/material";
+import { Button, CircularProgress, Grid, Typography,Fab, Box } from "@mui/material";
 import { forwardRef, useState } from "react";
 
 const AsyncForm = forwardRef(
@@ -36,6 +36,7 @@ const AsyncForm = forwardRef(
               </Fab>
             </Grid>
           ) : (
+            <Box>
             <Button
               id="SubmitButton"
               sx={{ ...buttonSx, mt }}
@@ -45,6 +46,7 @@ const AsyncForm = forwardRef(
               <div></div>
               {buttonText}
             </Button>
+            </Box>
           )}
         </form>
       </>

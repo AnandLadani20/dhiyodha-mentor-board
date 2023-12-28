@@ -61,7 +61,7 @@ const Register = () => {
     <>
       <AsyncForm
         onSubmit={handleSubmit(registerForm)}
-        buttonSx={{ width: "60%", displa: "block", margin: "0 auto" }}
+        buttonSx={{ width: "100%", displa: "block", margin: "0 auto" }}
         gridProps={{
           container: true,
           columnSpacing: "12px",
@@ -153,10 +153,10 @@ const Register = () => {
           </Typography>
         </Grid>
 
-        <Grid item xs={12} height="80px">
+        <Grid item xs={12} height="60px">
           <FormControlLabel
             control={
-              <Checkbox sx={{ padding: "0px" }} {...register("Terms")} />
+              <Checkbox sx={{ padding: "0px",marginLeft:"8px" }} {...register("Terms")} />
             }
             label={<Typography>Terms & Condition</Typography>}
           />
