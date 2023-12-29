@@ -14,13 +14,12 @@ import Register from "../components/common/Register";
 import SponsorForm from "../components/common/SponsorForm";
 import herobg from "../files/images/council.jpg";
 import heroImage from "../files/images/heroposter5.png";
-import dotImage from "../files/images/dots.png";
 import joinUsImg from "../files/images/whyUs.png";
+import speechImg from "../files/images/speechImg.jpg";
 
 import womenPoster from "../files/images/poster.png";
 import womenbanner from "../files/images/speechImg3.jpg";
 
-import vectorbg from "../files/images/Vector (1).png";
 import guest1 from "../files/images/guest1.jpg";
 import guest2 from "../files/images/guest2.jpg";
 import guest3 from "../files/images/guest3.jpg";
@@ -125,7 +124,8 @@ const Home = () => {
       <Grid height="100vh" width="100vw" m="0 auto" overflow="auto">
         <Header />
         <Grid
-          height="calc(100% - 90px)"
+          py={{ xs: 3, md: 4, lg: 8 }}
+          // height="calc(100% - 90px)"
           overflow="hidden"
           sx={{ position: "relative" }}
         >
@@ -136,6 +136,7 @@ const Home = () => {
               zIndex: "-1",
               height: "100%",
               width: "100%",
+              top: "0",
               transition: "transform 0.3s ease",
               "::before": {
                 content: "' '",
@@ -143,6 +144,8 @@ const Home = () => {
                 zIndex: "1",
                 top: 0,
                 left: 0,
+                bottom: 0,
+                right: 0,
                 width: "100%",
                 height: "100%",
                 backgroundColor: "#0038e0",
@@ -174,26 +177,22 @@ const Home = () => {
             justifyContent="center"
             height="100%"
             alignItems="center"
-            px="25px"
-            pt="25px"
           >
             <Grid item xs={10} md={10} lg={9}>
-              <Grid container>
-                <Grid item xs={12} md={6}>
-                  <Box className="hero-text-bg">
+              <Grid container rowSpacing={2}>
+                <Grid item xs={12} md={6} lg={6}>
+                  <Box
+                    className="hero-text-bg"
+                    textAlign={{ xs: "center", md: "start" }}
+                  >
                     <Typography
                       variant="h2"
                       color="#fff"
                       sx={{
                         lineHeight: "3.5rem",
                         fontWeight: "500",
-                        marginBottom: "10px",
-                        // backgroundColor: "#223f93",
-                        padding: "10px",
-                        display: "inline-block",
-                        textAlign: "center",
-                        // boxShadow: "-4px 4px 0px 0px #e17e80bf",
                       }}
+                      mb={{ xs: 0, md: 1 }}
                       className="heading_common_style"
                     >
                       WOMEN DIRECTORS
@@ -204,14 +203,8 @@ const Home = () => {
                       sx={{
                         lineHeight: "3.5rem",
                         fontWeight: "500",
-                        marginBottom: "10px",
-                        // backgroundColor: "#223f93",
-                        // background:"linear-gradient(to right bottom,#0c62e1,#0998d4,#33bba1)",
-                        padding: "10px",
-                        display: "inline-block",
-                        textAlign: "center",
-                        // boxShadow: "-4px 4px 0px 0px #e17e80bf",
                       }}
+                      mb={{ xs: 0, md: 1 }}
                       className="heading_common_style"
                     >
                       CONCLAVE 2024
@@ -222,14 +215,8 @@ const Home = () => {
                       sx={{
                         lineHeight: "3.5rem",
                         fontWeight: "500",
-                        marginBottom: "10px",
-                        // backgroundColor: "#223f93",
-                        // background:"linear-gradient(to right bottom,#0c62e1,#0998d4,#33bba1)",
-                        display: "inline-block",
-                        padding: "10px",
-                        textAlign: "center",
-                        // boxShadow: "-4px 4px 0px 0px #e17e80bf",
                       }}
+                      mb={{ xs: 0, md: 1 }}
                       className="heading_common_style"
                     >
                       #WDC2024
@@ -240,14 +227,8 @@ const Home = () => {
                       sx={{
                         lineHeight: "3rem",
                         fontWeight: "500",
-                        marginBottom: "10px",
-                        // backgroundColor: "#223f93",
-                        // background:"linear-gradient(to right bottom,#0c62e1,#0998d4,#33bba1)",
-                        padding: "10px",
-                        textAlign: "center",
-                        display: "inline-block",
-                        // boxShadow: "-4px 4px 0px 0px #e17e80bf",
                       }}
+                      mb={{ xs: 0, md: 1 }}
                       className="heading_common_style"
                     >
                       CELEBRATE WOMEN BOARD LEADERS
@@ -258,7 +239,7 @@ const Home = () => {
                         backgroundColor: "#fff",
                         border: "1px solid #ed3337",
                         borderRadius: "5px",
-                        display: "block",
+
                         color: "#ed3337",
                         fontSize: "16px",
                         ":hover": { backgroundColor: "#ed3337", color: "#fff" },
@@ -268,19 +249,23 @@ const Home = () => {
                     </Button>
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} lg={6}>
                   <Box
                     sx={{
                       position: "relative",
-                      display: "flex",
-                      justifyContent: "flex-end",
                     }}
+                    display="flex"
+                    justifyContent={{ xs: "center", md: "flex-end" }}
                   >
                     {/* <Box sx={{position:"absolute",top:"-40px",left:"40px"}}>
                       <img src={dotImage} alt="dots" height={150}/>
                     </Box> */}
                     <Box>
-                      <img src={heroImage} alt="hero" height={400} />
+                      <img
+                        src={heroImage}
+                        alt="hero"
+                        style={{ maxWidth: "450px", width: "100%" }}
+                      />
                     </Box>
                   </Box>
                 </Grid>
@@ -531,39 +516,6 @@ const Home = () => {
               </Grid>
             </Grid>
           </Grid>
-          {/* <Grid
-            item
-            xs={10}
-            sm={5}
-            md={4}
-            lg={3}
-            sx={{
-              transition: "transform 0.4s ease",
-              ":hover": {
-                transform: "translateY(-10px)",
-                boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-              },
-            }}
-          ></Grid>
-
-          <Grid
-            item
-            xs={10}
-            sm={5}
-            md={4}
-            lg={3}
-            ml={{ lg: 2, md: 2, sm: 1, xs: 0 }}
-            mt={{ xs: 2, sm: 0, md: 0 }}
-            sx={{
-              transition: "transform 0.4s ease",
-              ":hover": {
-                transform: "translateY(-10px)",
-                boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-              },
-            }}
-          ></Grid> */}
-
-          {/* <Box className="bg-banner-img"></Box> */}
         </Grid>
 
         <Grid container justifyContent="center" mt={2} py={2}>
@@ -711,120 +663,21 @@ const Home = () => {
         </Grid>
 
         <Grid container justifyContent="center" mt={5} mb={5}>
-          <Grid item xs={10} md={10} lg={9} textAlign="start">
-            <Typography
-              variant="h4"
-              mb={2}
-              className="heading_common_style"
-              color="#223f93"
-              sx={{
-                position: "relative",
-                "::after": {
-                  content: "''",
-                  position: "absolute",
-                  height: "1px",
-                  width: "180px",
-                  backgroundColor: "blue",
-                  bottom: "-5px",
-                  left: 0,
-                },
-              }}
-            >
-              CHIEF GUEST
-            </Typography>
-          </Grid>
-          <Grid item xs={10} md={10} lg={9} textAlign="start" mt={3}>
-            <Grid container columnSpacing={2} rowSpacing={2}>
-              <Grid item xs={12} sm={6} md={4}>
-                <Box>
-                  <img
-                    src={guest2}
-                    alt="chief-guest"
-                    height={250}
-                    width="100%"
-                  />
-                </Box>
-              </Grid>
-              <Grid item xs={12} sm={6} md={8}>
-                <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Smt. Nirmala Sitharaman
-                </Typography>
-                <Typography>
-                  Hon'ble Union Minister of Finance & Corporate Affairs,
-                  Government of India
-                </Typography>
-                <Typography>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Tenetur culpa incidunt sunt molestias dicta quas quisquam eos
-                  excepturi obcaecati ut! Culpa quod impedit voluptate
-                  reprehenderit voluptatibus! Optio similique quo eligendi qui
-                  odit, aut ullam nihil! Temporibus in culpa ad ab.
-                </Typography>
-                <Typography></Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={10} md={10} lg={9} textAlign="center">
-            <Typography
-              variant="h4"
-              mt={2}
-              className="heading_common_style"
-              color="#223f93"
-            >
-              KEY NOTE SPEAKERS
-            </Typography>
-          </Grid>
-          <Grid item xs={10} md={10} lg={9} textAlign="start" mt={4}>
-            <Grid
-              container
-              justifyContent="center"
-              columnSpacing={2}
-              rowSpacing={2}
-            >
-              <Grid item xs={12} sm={6} md={5}>
-                <Grid container>
-                  <Grid item md={12}>
-                    <Box>
-                      <img src={guest2} alt="chief-guest" height={250} />
-                    </Box>
-                  </Grid>
-                  <Grid item md={12}>
-                    <Typography>Smt. Nirmala Sitharaman</Typography>
-                    <Typography>
-                      Hon'ble Union Minister of Finance & Corporate Affairs,
-                      Government of India
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid item xs={12} sm={6} md={5}>
-                <Grid container>
-                  <Grid item md={12}>
-                    <Box>
-                      <img src={guest2} alt="chief-guest" height={250} />
-                    </Box>
-                  </Grid>
-                  <Grid item md={12}>
-                    <Typography>Smt. Nirmala Sitharaman</Typography>
-                    <Typography>
-                      Hon'ble Union Minister of Finance & Corporate Affairs,
-                      Government of India
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-
-        <Grid container justifyContent="center" mt={5} mb={5}>
           <Grid item xs={10} md={10} lg={9}>
             <Grid
               container
               justifyContent="space-evenly"
               columnSpacing={{ xs: 1, sm: 2, md: 1, lg: 2 }}
+              rowSpacing={2}
             >
-              <Grid item md={4} textAlign="center" sx={{ overflow: "hidden" }}>
+              <Grid
+                item
+                xs={12}
+                md={4.5}
+                lg={4}
+                textAlign="center"
+                sx={{ overflow: "hidden" }}
+              >
                 <Typography
                   variant="h4"
                   mb={2}
@@ -833,35 +686,36 @@ const Home = () => {
                 >
                   CHIEF GUEST
                 </Typography>
-                <Box className="guest-img-container">
-                  <Box height="100%" width="100%">
+                <Box className="guest-img-container box-tab">
+                  <Box
+                    height="100%"
+                    width="100%"
+                    className="effect effect-three"
+                  >
                     <img
                       src={guest2}
                       alt="chief-guest"
                       height={350}
                       width="100%"
                       style={{
-                        border: "4px solid white",
-                        // boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
                         objectFit: "cover",
                       }}
                     />
+                    <Box className="tab-text">
+                      <Typography className="">
+                        <Link to="#">
+                          <FacebookIcon />
+                        </Link>
+                        <Link to="#">
+                          <TwitterIcon />
+                        </Link>
+                        <Link to="#">
+                          <LinkedinIcon />
+                        </Link>
+                      </Typography>
+                    </Box>
                   </Box>
-                  <Box className="guest-img-hover-hide">
-                    <Typography
-                      fontSize="16px"
-                      fontWeight={600}
-                      color="#223f93"
-                    >
-                      Smt. Nirmala Sitharaman
-                    </Typography>
-                    <Typography>
-                      Hon'ble Union Minister of Finance & Corporate Affairs,
-                      Government of India
-                    </Typography>
-                  </Box>
-                  <Box className="guest-img-hover-content">
+                  <Box className="guest-img-hover-hide" mt={1}>
                     <Typography
                       fontSize="16px"
                       fontWeight={600}
@@ -878,8 +732,9 @@ const Home = () => {
               </Grid>
               <Grid
                 item
-                md={8}
-                lg={6}
+                xs={12}
+                md={7.5}
+                lg={8}
                 textAlign="center"
                 sx={{ overflow: "hidden" }}
               >
@@ -891,37 +746,42 @@ const Home = () => {
                 >
                   KEY NOTE SPEAKERS
                 </Typography>
-                <Grid container columnSpacing={{ xs: 1, sm: 2, md: 1, lg: 2 }}>
-                  <Grid item xs={6}>
-                    <Box className="guest-img-container">
-                      <Box height="100%" width="100%">
+                <Grid
+                  container
+                  justifyContent={{ xs: "center", md: "flex-end" }}
+                  columnSpacing={{ xs: 1, sm: 2, md: 2, lg: 2 }}
+                >
+                  <Grid item xs={6} md={5.5} lg={5}>
+                    <Box className="guest-img-container box-tab">
+                      <Box
+                        height={{ xs: "250px", md: "300px" }}
+                        width="100%"
+                        className="effect effect-three"
+                      >
                         <img
                           src={guest2}
                           alt="chief-guest"
-                          height={350}
+                          height="100%"
                           width="100%"
                           style={{
-                            border: "4px solid white",
-                            // boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
                             objectFit: "cover",
                           }}
                         />
+                        <Box className="tab-text">
+                          <Typography className="">
+                            <Link to="#">
+                              <FacebookIcon />
+                            </Link>
+                            <Link to="#">
+                              <TwitterIcon />
+                            </Link>
+                            <Link to="#">
+                              <LinkedinIcon />
+                            </Link>
+                          </Typography>
+                        </Box>
                       </Box>
-                      <Box className="guest-img-hover-hide">
-                        <Typography
-                          fontSize="16px"
-                          fontWeight={600}
-                          color="#223f93"
-                        >
-                          Smt. Nirmala Sitharaman
-                        </Typography>
-                        <Typography>
-                          Hon'ble Union Minister of Finance & Corporate Affairs,
-                          Government of India
-                        </Typography>
-                      </Box>
-                      <Box className="guest-img-hover-content">
+                      <Box className="guest-img-hover-hide" mt={1}>
                         <Typography
                           fontSize="16px"
                           fontWeight={600}
@@ -936,36 +796,37 @@ const Home = () => {
                       </Box>
                     </Box>
                   </Grid>
-                  <Grid item xs={6}>
-                    <Box className="guest-img-container">
-                      <Box height="100%" width="100%">
+                  <Grid item xs={6} md={5.5} lg={5}>
+                    <Box className="guest-img-container box-tab">
+                      <Box
+                        height={{ xs: "250px", md: "300px" }}
+                        width="100%"
+                        className="effect effect-three"
+                      >
                         <img
                           src={guest2}
                           alt="chief-guest"
-                          height={350}
+                          height="100%"
                           width="100%"
                           style={{
-                            border: "4px solid white",
-                            // boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
                             objectFit: "cover",
                           }}
                         />
+                        <Box className="tab-text">
+                          <Typography className="">
+                            <Link to="#">
+                              <FacebookIcon />
+                            </Link>
+                            <Link to="#">
+                              <TwitterIcon />
+                            </Link>
+                            <Link to="#">
+                              <LinkedinIcon />
+                            </Link>
+                          </Typography>
+                        </Box>
                       </Box>
-                      <Box className="guest-img-hover-hide">
-                        <Typography
-                          fontSize="16px"
-                          fontWeight={600}
-                          color="#223f93"
-                        >
-                          Smt. Nirmala Sitharaman
-                        </Typography>
-                        <Typography>
-                          Hon'ble Union Minister of Finance & Corporate Affairs,
-                          Government of India
-                        </Typography>
-                      </Box>
-                      <Box className="guest-img-hover-content">
+                      <Box className="guest-img-hover-hide" mt={1}>
                         <Typography
                           fontSize="16px"
                           fontWeight={600}
@@ -998,11 +859,17 @@ const Home = () => {
             </Typography>
           </Grid>
           <Grid item xs={10} md={10} lg={9} textAlign="start" mt={4}>
-            <Grid container columnSpacing={2} rowSpacing={2}>
-              <Grid item xs={12} sm={6} md={4}>
+            <Grid container columnSpacing={1} rowSpacing={2}>
+              <Grid item xs={6} sm={6} md={3} lg={3}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
-                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <img
+                      src={guest1}
+                      alt="guest"
+                      height="100%"
+                      width="100%"
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                    />
                     <Box className="guest_social_media_wrap">
                       <Box className="media_item_wrap">
                         <FacebookIcon />
@@ -1018,19 +885,24 @@ const Home = () => {
                       </Box>
                     </Box>
                   </Box>
-                  <Typography fontWeight={600} mt={1} pl={1}>
-                    Smt. Nirmala Sitharaman
+                  <Typography fontWeight={600} mt={1} textAlign="center">
+                    Latha Venkatesh
                   </Typography>
-                  <Typography pl={1}>
-                    Hon'ble Union Minister of Finance & Corporate Affairs,
-                    Government of India
+                  <Typography textAlign="center">
+                    Executive Editor at CNBC TV18
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={6} sm={6} md={3} lg={3}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
-                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <img
+                      src={guest1}
+                      alt="guest"
+                      height="100%"
+                      width="100%"
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                    />
                     <Box className="guest_social_media_wrap">
                       <Box className="media_item_wrap">
                         <FacebookIcon />
@@ -1046,19 +918,24 @@ const Home = () => {
                       </Box>
                     </Box>
                   </Box>
-                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
-                    Smt. Nirmala Sitharaman
+                  <Typography fontWeight={600} mt={1} textAlign="center">
+                    Robin Banerjee
                   </Typography>
-                  <Typography pl={1}>
-                    Hon'ble Union Minister of Finance & Corporate Affairs,
-                    Government of India
+                  <Typography textAlign="center">
+                    MD, Caprihans I Ltd
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={6} sm={6} md={3} lg={3}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
-                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <img
+                      src={guest1}
+                      alt="guest"
+                      height="100%"
+                      width="100%"
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                    />
                     <Box className="guest_social_media_wrap">
                       <Box className="media_item_wrap">
                         <FacebookIcon />
@@ -1074,19 +951,24 @@ const Home = () => {
                       </Box>
                     </Box>
                   </Box>
-                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
-                    Smt. Nirmala Sitharaman
+                  <Typography fontWeight={600} mt={1} textAlign="center">
+                    Bhavana Bindra
                   </Typography>
-                  <Typography pl={1}>
-                    Hon'ble Union Minister of Finance & Corporate Affairs,
-                    Government of India
+                  <Typography textAlign="center">
+                    Managing Director, REHAU South Asia
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={6} sm={6} md={3} lg={3}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
-                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <img
+                      src={guest1}
+                      alt="guest"
+                      height="100%"
+                      width="100%"
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                    />
                     <Box className="guest_social_media_wrap">
                       <Box className="media_item_wrap">
                         <FacebookIcon />
@@ -1102,19 +984,24 @@ const Home = () => {
                       </Box>
                     </Box>
                   </Box>
-                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
-                    Smt. Nirmala Sitharaman
+                  <Typography fontWeight={600} mt={1} textAlign="center">
+                    Priti Savla
                   </Typography>
-                  <Typography pl={1}>
-                    Hon'ble Union Minister of Finance & Corporate Affairs,
-                    Government of India
+                  <Typography textAlign="center">
+                    CCM - ICAI, Mentor, Independent Director
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={6} sm={6} md={3} lg={3}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
-                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <img
+                      src={guest1}
+                      alt="guest"
+                      height="100%"
+                      width="100%"
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                    />
                     <Box className="guest_social_media_wrap">
                       <Box className="media_item_wrap">
                         <FacebookIcon />
@@ -1130,19 +1017,24 @@ const Home = () => {
                       </Box>
                     </Box>
                   </Box>
-                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
-                    Smt. Nirmala Sitharaman
+                  <Typography fontWeight={600} mt={1} textAlign="center">
+                    Sridhar Ramachandran
                   </Typography>
-                  <Typography pl={1}>
-                    Hon'ble Union Minister of Finance & Corporate Affairs,
-                    Government of India
+                  <Typography textAlign="center">
+                    Author, Mentor and Advisor at Indianivesh Renaissance Fund
                   </Typography>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={6} sm={6} md={3} lg={3}>
                 <Box className="guest-content-wrap">
                   <Box className="guest-img-wrap">
-                    <img src={guest1} alt="guest" height="100%" width="100%" />
+                    <img
+                      src={guest1}
+                      alt="guest"
+                      height="100%"
+                      width="100%"
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                    />
                     <Box className="guest_social_media_wrap">
                       <Box className="media_item_wrap">
                         <FacebookIcon />
@@ -1158,12 +1050,11 @@ const Home = () => {
                       </Box>
                     </Box>
                   </Box>
-                  <Typography variant="h6" fontWeight={600} mt={1} pl={1}>
-                    Smt. Nirmala Sitharaman
+                  <Typography fontWeight={600} mt={1} textAlign="center">
+                    Amisha Vora
                   </Typography>
-                  <Typography pl={1}>
-                    Hon'ble Union Minister of Finance & Corporate Affairs,
-                    Government of India
+                  <Typography textAlign="center">
+                    Owner and Joint MD at Prabhudas Lilladher
                   </Typography>
                 </Box>
               </Grid>
@@ -1172,8 +1063,8 @@ const Home = () => {
         </Grid>
 
         <Grid container justifyContent="center" mt={5} mb={5}>
-          <Grid item xs={12}>
-            <Box
+          <Grid item xs={12} position="relative">
+            {/* <Box
               height="400px"
               width="100%"
               sx={{
@@ -1194,6 +1085,7 @@ const Home = () => {
                 },
               }}
             >
+              
               <img
                 src={womenbanner}
                 alt="women-bg-poster"
@@ -1208,13 +1100,42 @@ const Home = () => {
               <Typography variant="h4" textAlign="center" color="#fff">
                 Lorem ipsum dolor sit amet.
               </Typography>
+            </Box> */}
+            <Box
+              height={{ xs: "300px", md: "350px" }}
+              sx={{
+                position: "relative",
+                backgroundImage: `url(${womenbanner})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                zIndex: "-2",
+                width: "100%",
+                backgroundAttachment: "fixed",
+                "::before": {
+                  content: "' '",
+                  position: "absolute",
+                  zIndex: "-1",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "#1f5cff",
+                  opacity: 0.7,
+                },
+              }}
+            >
+              <Box sx={{height:"100%",width:"100%",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <Typography variant="h4" textAlign="center" color="#fff">
+                  Lorem ipsum dolor sit amet.
+                </Typography>
+              </Box>
             </Box>
           </Grid>
         </Grid>
 
-        <Grid container justifyContent="center" mt={5} mb={5}>
+        <Grid container justifyContent="center" mb={5}>
           <Grid item xs={10} md={10} lg={9}>
-            <Grid container mt={3}>
+            <Grid container rowSpacing={2}>
               <Grid item xs={12} textAlign="center" mb={3}>
                 <Typography
                   variant="h4"
@@ -1224,7 +1145,7 @@ const Home = () => {
                   JOIN US
                 </Typography>
               </Grid>
-              <Grid item md={6} lg={6}>
+              <Grid item xs={12} md={6} lg={6}>
                 <Typography
                   variant="h4"
                   className="heading_common_style"
@@ -1270,16 +1191,25 @@ const Home = () => {
                   Book Your Seat
                 </Button>
               </Grid>
-              <Grid item md={6} lg={6}>
+              <Grid item xs={12} md={6} lg={6}>
                 <Box
                   sx={{
                     display: "flex",
-                    justifyContent: "center",
                     alignItems: "center",
                     height: "100%",
+                    width: "100%",
                   }}
+                  justifyContent={{ xs: "center", md: "flex-end" }}
                 >
-                  <img src={joinUsImg} alt="img-banner" height={400} />
+                  <img
+                    src={joinUsImg}
+                    alt="img-banner"
+                    style={{
+                      maxWidth: "500px",
+                      width: "100%",
+                      padding: "20px",
+                    }}
+                  />
                 </Box>
               </Grid>
             </Grid>
@@ -1517,7 +1447,7 @@ const Home = () => {
 
         <Grid container justifyContent="center" mt={5} mb={5}>
           <Grid item xs={10} md={10} lg={9}>
-            <Grid container mt={3}>
+            <Grid container mt={3} columnSpacing={2} rowSpacing={2}>
               <Grid item xs={12} textAlign="center" mb={3}>
                 <Typography
                   variant="h4"
@@ -1534,10 +1464,23 @@ const Home = () => {
                   DIRECTORS CONCLAVE 2024
                 </Typography>
               </Grid>
-              <Grid item md={6} lg={6}>
-                <img src="i" alt="img-banner" />
+              <Grid item xs={12} md={6} lg={6}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    width: "100%",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={speechImg}
+                    alt="img-banner"
+                    style={{ width: "100%" }}
+                  />
+                </Box>
               </Grid>
-              <Grid item md={6} lg={6}>
+              <Grid item xs={12} md={6} lg={6}>
                 <Typography textAlign="justify">
                   Lorem ipsum dolor sit, Quae perspiciatis error tempore nulla
                   cum sunt id iste inventore aut adipisci, tempora quasi nostrum
@@ -1571,7 +1514,7 @@ const Home = () => {
                   Book Your Seat
                 </Button>
               </Grid>
-              <Grid item lg={12} mt={5} mb={3}>
+              <Grid item xs={12} lg={12} mt={5} mb={3}>
                 <Typography
                   variant="h4"
                   className="heading_common_style"
@@ -1650,7 +1593,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1682,7 +1626,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1714,7 +1659,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1746,7 +1692,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1778,7 +1725,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1810,7 +1758,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1847,7 +1796,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1879,7 +1829,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1911,7 +1862,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1943,7 +1895,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -1975,7 +1928,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
@@ -2007,7 +1961,8 @@ const Home = () => {
                         height={100}
                         width={100}
                         style={{
-                          border: "1px solid #9e9e9e",marginBottom:"5px",
+                          border: "1px solid #9e9e9e",
+                          marginBottom: "5px",
                           borderRadius: "50%",
                         }}
                       />
